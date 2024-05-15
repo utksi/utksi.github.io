@@ -1,0 +1,179 @@
+.field-row
+{
+	display: flex;
+	align-items: center;
+	column-gap: 6px;
+}
+
+[class^=field-row]+[class^=field-row]
+{
+	margin-top: 6px
+}
+
+fieldset
+{
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+label
+{
+	display: inline-block;
+	margin-right: 5px;
+}
+
+a
+{
+	color: var(--link-color);
+}
+
+a:visited
+{
+	color: var(--link-visited);
+}
+
+a:active
+{
+	color: var(--link-active);
+}
+
+/* Style external links */
+:not(.sideBarWebButtons, #dingusnetwork) > a[href]:not(.socialMediaIcon):not(:where([href^="#"], [href^="/"]:not([href^="//"]), [href*="//analogfeelings.github.io"]))
+{
+	background-image: var(--external-link-icon);
+	background-position: center right;
+	background-repeat: no-repeat;
+	padding-right: 16px;
+	background-size: 12px 12px;
+}
+
+h1::after, h2::after
+{
+	display: block;
+	content: '';
+
+	margin-top: 10px;
+
+	min-height: 4px;
+	min-width: 100%;
+
+	background: linear-gradient(90deg, var(--header-gradient-start), transparent);
+}
+
+h2::after
+{
+    min-height: 3px;
+}
+
+h2
+{
+    font-weight: 500;
+}
+
+html
+{
+	height: 100%;
+
+	overflow-x: clip;
+}
+
+body
+{
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
+
+	overflow-x: clip;
+
+	color-scheme: light;
+	background-color: var(--body-background);
+	color: var(--body-foreground);
+
+	font-family: PTSerif, serif;
+}
+
+.filterDisabled
+{
+	image-rendering: pixelated;
+}
+
+.mainBodyDiv
+{
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-grow: 1;
+
+	column-gap: 0;
+}
+
+.innerBodyDiv
+{
+	width: 100%;
+	height: 100%;
+
+	align-items: stretch;
+
+	column-gap: 0;
+}
+
+.bodyContent
+{
+	width: 100%;
+
+	box-sizing: border-box;
+}
+
+.bodyContent > .separatorDiv
+{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.separatorDiv
+{
+	width: 95%;
+	height: 2px;
+
+	background: linear-gradient(90deg, transparent 0%, var(--separator-color) 50%, transparent 100%);
+}
+
+.postHeader
+{
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.postHeaderInformation
+{
+	margin-bottom: 0.5em !important;
+}
+
+.postDescription
+{
+	margin: 0;
+}
+
+.postInformation
+{
+	color: var(--thin-color);
+
+	margin-bottom: 25px;
+}
+
+.postInformationBullet
+{
+	position: relative;
+}
+
+.languagesText
+{
+	display: flex;
+
+	flex-direction: column;
+	row-gap: 8px;
+
+	justify-content: center;
+}

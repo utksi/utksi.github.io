@@ -1,0 +1,58 @@
+.specialFieldset
+{
+	padding-bottom: 12px;
+}
+
+.specialFieldset > legend
+{
+	padding: 4px;
+}
+
+.specialFieldset > legend > img
+{
+	display: inline;
+	position: relative;
+
+	vertical-align: middle;
+
+	width: 22px;
+	height: 22px;
+
+	bottom: 1px;
+}
+
+.warningFieldset
+{
+	background-color: var(--warning-background-color);
+	border-color: var(--warning-border-color);
+}
+
+.warningFieldset > legend
+{
+	border: 2px ridge var(--warning-border-color);
+	background-color: var(--warning-background-color);
+}
+
+.importantFieldset
+{
+	background-color: var(--important-background-color);
+	border-color: var(--important-border-color);
+}
+
+.importantFieldset > legend
+{
+	border: 2px ridge var(--important-border-color);
+	background-color: var(--important-background-color);
+}
+
+.remarksFieldset
+{
+	background-color: var(--remarks-background-color);
+	border-color: var(--remarks-border-color);
+}
+
+.remarksFieldset > legend
+{
+	border: 2px ridge var(--remarks-border-color);
+	background-color: var(--remarks-background-color);
+}

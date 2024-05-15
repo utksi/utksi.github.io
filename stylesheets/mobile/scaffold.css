@@ -1,0 +1,115 @@
+.topBar
+{
+	padding: 12px;
+
+	column-gap: 0;
+}
+
+.topBar > img
+{
+	display: none;
+}
+
+.topBarText > p
+{
+	margin-bottom: 8px;
+}
+
+.topBarTextTop
+{
+	font-size: 1.8em;
+}
+
+.topBarTextBottom
+{
+	display: none;
+}
+
+.topBarTextGradient
+{
+	min-height: 4px;
+	min-width: 115%;
+}
+
+.topBarBurger
+{
+	display: block;
+
+	margin-right: 15px;
+	margin-left: 5px;
+}
+
+.topBarBurger > button
+{
+	width: 32px;
+	height: 32px;
+
+	background-image: url("/resources/menu.svg");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center center;
+	background-size: 24px 24px;
+
+	filter: var(--menu-button-filter);
+
+	border: 2px solid var(--button-border);
+
+	padding: 0;
+
+	color: black;
+}
+
+.sideBar
+{
+	display: none;
+
+	position: absolute;
+
+	max-width: 250px;
+	min-width: 230px;
+
+	border-bottom: ridge 2px var(--navbar-border-color);
+	box-shadow: 4px 4px 6px 0 rgb(0 0 0 / 13%);
+
+	padding: 10px;
+}
+
+.sideBar.shown
+{
+	display: flex;
+
+	z-index: 9999999;
+}
+
+.sideBarSection
+{
+	margin-top: 8px;
+	margin-right: 23px;
+	margin-left: 23px;
+	margin-bottom: 8px;
+}
+
+.sideBarSection > ul:not(.fancyTreeview)
+{
+	padding-left: 25px;
+}
+
+.sideBarCopyright
+{
+	font-size: 0.8em;
+}
+
+.sideBarSocial
+{
+	width: 100%;
+
+	margin-top: 22px;
+}
+
+.sideBarSocialRss > img
+{
+	width: 24px;
+	height: 24px;
+
+	vertical-align: -0.4em;
+}
