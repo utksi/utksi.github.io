@@ -8,7 +8,8 @@
 
 This is the main repository for my public [website](https://utksi.github.io/)!
 
-Head over to the **Discussions** tab for comments or feedback!
+Copied from Nora's Hideout (see github link), until I figure this out.
+I liked the retro style - but would of course not use the assets in the final version. Posts and sensitive stuff removed.
 
 ## :incoming_envelope: Pull Requests
 No use here of course.
