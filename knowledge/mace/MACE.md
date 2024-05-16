@@ -1,3 +1,9 @@
+---
+layout: post
+title: "MACE (Message Passing ACE)"
+date: 2023-05-16
+---
+
 # MACE (Message Passing Atomic Cluster Expansion)
 
 #### **Introduction**
