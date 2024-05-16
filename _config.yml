@@ -5,14 +5,3 @@ markdown: kramdown
 
 include:
   - '_config.yml'
-  - 'elements'  # No need for leading slash
-  - 'resources'
-  - 'stylesheets'
-  - 'javascript'
-  - 'lib'
-
-# Optional: specify plugins you are using
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
