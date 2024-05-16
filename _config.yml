@@ -1,3 +1,8 @@
+title: UT's Blog
+baseurl: ""  # the subpath of your site, e.g., /blog if your site is hosted at example.com/blog
+url: "https://utksi.github.io"  # the base hostname & protocol for your site
+markdown: kramdown
+
 include:
   - '_config.yml'
   - 'elements'  # No need for leading slash
