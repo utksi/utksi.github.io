@@ -15,6 +15,28 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
     - **Secondary IDE**: neovim
 
+
+<div>
+    <h2>Research notes</h2>
+      <ul>
+      {% for article in site.knowledge limit:3 %}
+      <li>
+      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
+      <p>{{ article.description }}</p>
+      </li>
+      {% endfor %}
+      </ul>
+<h2>Personal</h2>
+      <ul>
+      {% for post in site.posts limit:3 %}
+      <li>
+      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
+      <p>{{ post.description }}</p>
+      </li>
+      {% endfor %}
+      </ul>
+</div>
+
 ## My Programming Languages
 
 Here's a list of programming languages I work with or have worked with before!
@@ -76,7 +98,7 @@ Here's a list of programming languages I work with or have worked with before!
     </div>
   </div>
   <div>
-    <h2>Research posts</h2>
+    <h2>Research notes</h2>
       <ul>
       {% for article in site.knowledge limit:3 %}
       <li>
