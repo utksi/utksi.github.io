@@ -106,7 +106,8 @@ For further details, refer to the [Batatia et al.](https://arxiv.org/abs/2206.07
 $$
   Y^L_M(\theta, \phi) = \sqrt{\frac{(2L+1)}{4\pi} \frac{(L-M)!}{(L+M)!}} P^M_L(\cos \theta) e^{iM\phi}
 $$
-  where $P^M_L$ are the associated Legendre polynomials.
+
+where $P^M_L$ are the associated Legendre polynomials.
 
 ### 2. **Clebsch-Gordan Coefficients**
 
@@ -141,7 +142,8 @@ where  $C_{L, M}^{l_1, m_1; l_2, m_2}$  are the Clebsch-Gordan coefficients.
 $$
   Q^T Q = I \quad \text{and} \quad \det(Q) = \pm 1
 $$
-  where $I$ is the identity matrix.
+
+where $I$ is the identity matrix.
 
 ### 4. **Wigner D-matrix**
 
