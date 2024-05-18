@@ -10,29 +10,40 @@
   <link href="{{ '/css/shared/fonts.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/shared/index.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/shared/scaffold.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/list.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/mobile/social.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/mobile/index.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/mobile/scaffold.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/computer/social.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/computer/index.css' | relative_url }}" rel="stylesheet">
   <link href="{{ '/css/computer/scaffold.css' | relative_url }}" rel="stylesheet">
+  <script src="{{ '/javascript/common.js' | relative_url }}"></script>
+  <script src="{{ '/javascript/pages/index.js' | relative_url }}"></script>
   <link href="{{ '/resources/favicon.png' | relative_url }}" rel="icon">
-  <link href="{{ '/rss.xml' | relative_url }}" rel="alternate" title="Subscribe to the blog feed!" type="application/rss+xml"/>
-  <meta content="{{ page.title }}" name="og:title">
+  <meta content="Home Page" name="og:title">
   <meta content="{{ site.url }}" name="og:url">
-  <meta content="{{ page.description }}" name="og:description">
+  <meta content="Hi! This is the homepage to UT's personal website! I post blogs and random stuff here. Hope you enjoy it!" name="og:description">
   <meta content="{{ site.url }}/resources/bannercropped.png" name="og:image">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="#396BA5" name="theme-color">
-  <link href="https://gist.githubusercontent.com/utksi/b2866747178201fc1487a714ffc5c40a/raw/aestheticalshideout.json" type="application/json+oembed"/>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <div data-include="topbar">{% include topbar.html %}</div>
+  {% include topbar.html %}
   <div class="mainBodyDiv field-row">
     <div class="innerBodyDiv field-row">
-      <div data-include="sidebar">{% include sidebar.html %}</div>
+      {% include sidebar.html %}
       <div class="bodyContent">
         {{ content }}
       </div>
