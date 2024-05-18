@@ -7,10 +7,13 @@ title: "Home - UT's Blog"
 
 Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
-    - **Primary OS**: macOS
-    - **Secondary OS**: arch (yes, I know)
-    - **Primary IDE**: VSCode 2024
-    - **Secondary IDE**: neovim
+- **Primary OS**: macOS
+
+- **Secondary OS**: arch (yes, I know)
+
+- **Primary IDE**: VSCode 2024
+
+- **Secondary IDE**: neovim
 
 ## My Programming Languages
 
