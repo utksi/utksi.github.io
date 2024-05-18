@@ -6,6 +6,7 @@ title: "Home - UT's Blog"
 # Home Page
 
 Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
+
     - **Primary OS**: macOS
     - **Secondary OS**: arch (yes, I know)
     - **Primary IDE**: VSCode 2024
@@ -19,7 +20,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/csharp.png">
     <div class="languagesText">
-      **C#**  
+      <strong>C#</strong>  
       It's my favorite language so far. I do most of my programs in it, I can't live without it.
     </div>
   </div>
@@ -27,7 +28,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/c.png">
     <div class="languagesText">
-      **C**  
+      <strong>C</strong>  
       Barely use it, since I almost never do low-level things, and if I do, I either use C++ or use P/Invoke on C#.
     </div>
   </div>
@@ -35,7 +36,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/cpp.png">
     <div class="languagesText">
-      **C++**  
+      <strong>C++</strong>  
       The first language I ever tried to learn, didn't go well, obviously. Now I use it for low-level things.
     </div>
   </div>
@@ -43,7 +44,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/java.png">
     <div class="languagesText">
-      **Java**  
+      <strong>Java</strong>  
       I tried to learn it before I settled with C#. I barely use it anymore.
     </div>
   </div>
@@ -51,7 +52,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/js.png">
     <div class="languagesText">
-      **JavaScript**  
+      <strong>JavaScript</strong>  
       I absolutely despise it, but it's a necessity for websites.
     </div>
   </div>
@@ -59,7 +60,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/html.png">
     <div class="languagesText">
-      **HTML**  
+      <strong>HTML</strong>  
       I also absolutely despise it, but it's at least less insane than JS.
     </div>
   </div>
@@ -67,7 +68,7 @@ Here's a list of programming languages I work with or have worked with before!
   <div class="listItem">
     <img src="/resources/langs/css.png">
     <div class="languagesText">
-      **CSS**  
+      <strong>CSS</strong>  
       This wretched thing should not be alive. It makes websites look pretty though.
     </div>
   </div>
