@@ -164,3 +164,5 @@ $$
 ### Conclusion
 
 By incorporating the dynamic message-passing strategy of Co-GNNs into the MACE framework, we can enhance its flexibility and adaptability. This involves using an Action Network to determine the message-passing strategy for each atom, modifying the message construction and state update equations accordingly. This integration retains the equivariance properties of MACE while potentially improving its expressiveness and ability to capture complex interactions(?).
+
+
