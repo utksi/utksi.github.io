@@ -7,13 +7,10 @@ title: "Home - UT's Blog"
 
 Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
-    - **Primary OS**: macOS
-
-    - **Secondary OS**: arch (yes, I know)
-
-    - **Primary IDE**: VSCode 2024
-
-    - **Secondary IDE**: neovim
+- **Primary OS**: macOS    
+- **Secondary OS**: arch (yes, I know)
+- **Primary IDE**: VSCode 2024
+- **Secondary IDE**: neovim
 
 
 <div>
@@ -96,25 +93,5 @@ Here's a list of programming languages I work with or have worked with before!
       <strong>CSS</strong>  
       This wretched thing should not be alive. It makes websites look pretty though.
     </div>
-  </div>
-  <div>
-    <h2>Research notes</h2>
-      <ul>
-      {% for article in site.knowledge limit:3 %}
-      <li>
-      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
-      <p>{{ article.description }}</p>
-      </li>
-      {% endfor %}
-      </ul>
-    <h2>Personal</h2>
-      <ul>
-      {% for post in site.posts limit:3 %}
-      <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
-      <p>{{ post.description }}</p>
-      </li>
-      {% endfor %}
-      </ul>
   </div>
 </div>
