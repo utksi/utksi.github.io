@@ -1,7 +1,7 @@
 # Site settings
 title: "UT's Blog"
 email: "utkarsh.singh@liu.com"
-description: "This is my personal blog where I post professional and personal stuff."
+description: "This is my personal blog where I post research notes + personal stuff."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://utksi.github.io" # your GitHub Pages URL
 github_username: "utksi"
@@ -64,13 +64,13 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "default"
       author: "Utkarsh"
   - scope:
       path: ""
       type: "knowledge"
     values:
-      layout: "knowledge"
+      layout: "default"
       author: "Utkarsh"
   - scope:
       path: ""
