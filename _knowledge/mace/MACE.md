@@ -1,10 +1,7 @@
-# MACE (Message Passing Atomic Cluster Expansion)
-=================================================
-
-#### **Introduction**
+### **Introduction**
 MACE (Message Passing Atomic Cluster Expansion) is an equivariant message passing neural network that uses higher-order messages to enhance the accuracy and efficiency of force fields in computational chemistry.
 
-#### **Node Representation**
+### **Node Representation**
 Each node $\large{i}$ is represented by:
 
 $$
@@ -13,14 +10,14 @@ $$
 
 where $r_i \in \mathbb{R}^3$ is the position, $\large{z_i}$ is the chemical element, and $\large{h_i^{(t)}}$ are the learnable features at layer $\large{t}$.
 
-#### **Message Construction**
+### **Message Construction**
 Messages are constructed hierarchically using a body order expansion:
 
 $$
 m_i^{(t)} = \sum_j u_1(\sigma_i^{(t)}, \sigma_j^{(t)}) + \sum_{j_1, j_2} u_2(\sigma_i^{(t)}, \sigma_{j_1}^{(t)}, \sigma_{j_2}^{(t)}) + \cdots + \sum_{j_1, \ldots, j_\nu} u_\nu(\sigma_i^{(t)}, \sigma_{j_1}^{(t)}, \ldots, \sigma_{j_\nu}^{(t)})
 $$
 
-#### **Two-body Message Construction**
+### **Two-body Message Construction**
 For two-body interactions, the message  $m_i^{(t)}$  is:
 
 $$
@@ -29,7 +26,7 @@ $$
 
 where  $\large{R}$  is a learnable radial basis,  $\large{Y}$  are spherical harmonics, and  $\large{W}$  are learnable weights.  $\large{C}$  are Clebsch-Gordan coefficients ensuring equivariance.
 
-#### **Higher-order Feature Construction**
+### **Higher-order Feature Construction**
 Higher-order features are constructed using tensor products and symmetrization:
 
 $$
@@ -38,14 +35,14 @@ $$
 
 where  $\large{C}$  are generalized Clebsch-Gordan coefficients.
 
-#### **Message Passing**
+### **Message Passing**
 The message passing updates the node features by aggregating messages:
 
 $$
 \large{h_i^{(t+1)} = U_{kL}^{(t)}(\sigma_i^{(t)}, m_i^{(t)}) = \sum_{k'} W_{kL, k'}^{(t)} m_{i, k' LM} + \sum_{k'} W_{z_i kL, k'}^{(t)} h_{i, k' LM}^{(t)}}
 $$
 
-#### **Readout Phase**
+### **Readout Phase**
 In the readout phase, invariant features are mapped to site energies:
 
 $$
@@ -62,7 +59,7 @@ $$
 \large{E_i^{(T)} = \text{MLP}_{\text{readout}}^{(t)}(\{h_{i, k 00}^{(t)}\})}
 $$
 
-#### **Equivariance**
+### **Equivariance**
 The model ensures equivariance under rotation  $\large{Q \in O(3)}$ :
 
 $$
@@ -75,7 +72,7 @@ $$
 \large{h_{i, k LM}^{(t)}(Q \cdot (r_1, \ldots, r_N)) = \sum_{M'} D_L(Q)_{M'M} h_{i, k LM'}^{(t)}(r_1, \ldots, r_N)}
 $$
 
-### Properties and Computational Efficiency
+## Properties and Computational Efficiency
 
 1. **Body Order Expansion**:
    - MACE constructs messages using higher body order expansions, enabling rich representations of atomic environments.
@@ -91,7 +88,8 @@ $$
 
 For further details, refer to the [Batatia et al.](https://arxiv.org/abs/2206.07697).
 
-# Necessary math to know:
+
+## Necessary math to know:
 
 
 ### 1. **Spherical Harmonics**
