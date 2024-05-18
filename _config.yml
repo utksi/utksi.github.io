@@ -1,1 +1,83 @@
-include: ['.well-known']
+# Site settings
+title: "UT's Blog"
+email: "utkarsh.singh@liu.com"
+description: "This is my personal blog where I post professional and personal stuff."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://utksi.github.io" # your GitHub Pages URL
+github_username: "utksi"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
+  knowledge:
+    output: true
+    permalink: /knowledge/:title/
+
+# Exclude these files and directories from the site build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Configuration for the markdown processor
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: 1..6
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Configuration for the sitemap
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
+
+# Configuration for SEO tag
+jekyll-seo-tag:
+  type: "website"
+  image: "/resources/bannercropped.png"
+  twitter:
+    card: "summary_large_image"
+    creator: "@RomulanAle"
+    site: "@RomulanAle"
+
+# Default settings for all pages and posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Utkarsh"
+  - scope:
+      path: ""
+      type: "knowledge"
+    values:
+      layout: "knowledge"
+      author: "Utkarsh"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default" # Ensure this matches the layout you want for pages
+
+# Permalinks settings
+permalink: pretty
+

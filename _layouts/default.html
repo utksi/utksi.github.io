@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>{{ page.title }}</title>
+  <link href="{{ '/css/shared/colors.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/images.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/social.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/fonts.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/index.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/shared/scaffold.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/mobile/social.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/mobile/index.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/mobile/scaffold.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/computer/social.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/computer/index.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/css/computer/scaffold.css' | relative_url }}" rel="stylesheet">
+  <link href="{{ '/resources/favicon.png' | relative_url }}" rel="icon">
+  <link href="{{ '/rss.xml' | relative_url }}" rel="alternate" title="Subscribe to the blog feed!" type="application/rss+xml"/>
+  <meta content="{{ page.title }}" name="og:title">
+  <meta content="{{ site.url }}" name="og:url">
+  <meta content="{{ page.description }}" name="og:description">
+  <meta content="{{ site.url }}/resources/bannercropped.png" name="og:image">
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="#396BA5" name="theme-color">
+  <link href="https://gist.githubusercontent.com/utksi/b2866747178201fc1487a714ffc5c40a/raw/aestheticalshideout.json" type="application/json+oembed"/>
+</head>
+<body>
+  <div data-include="topbar"></div>
+  <div class="mainBodyDiv field-row">
+    <div class="innerBodyDiv field-row">
+      <div data-include="sidebar"></div>
+      <div class="bodyContent">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
