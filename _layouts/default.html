@@ -25,12 +25,14 @@
   <meta content="summary_large_image" name="twitter:card">
   <meta content="#396BA5" name="theme-color">
   <link href="https://gist.githubusercontent.com/utksi/b2866747178201fc1487a714ffc5c40a/raw/aestheticalshideout.json" type="application/json+oembed"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <div data-include="topbar"></div>
+  <div data-include="topbar">{% include topbar.html %}</div>
   <div class="mainBodyDiv field-row">
     <div class="innerBodyDiv field-row">
-      <div data-include="sidebar"></div>
+      <div data-include="sidebar">{% include sidebar.html %}</div>
       <div class="bodyContent">
         {{ content }}
       </div>
