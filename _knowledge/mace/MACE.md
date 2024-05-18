@@ -1,4 +1,5 @@
 # MACE (Message Passing Atomic Cluster Expansion)
+=================================================
 
 #### **Introduction**
 MACE (Message Passing Atomic Cluster Expansion) is an equivariant message passing neural network that uses higher-order messages to enhance the accuracy and efficiency of force fields in computational chemistry.
