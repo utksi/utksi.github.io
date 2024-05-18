@@ -117,12 +117,15 @@ $$
 - In MACE, Clebsch-Gordan coefficients are used to combine features from different atoms while maintaining rotational invariance. They ensure that the resulting features transform correctly under rotations, preserving the physical symmetry of the system.
 
 **Mathematically:**
-- When combining two angular momentum states  $|l_1, m_1\rangle$  and  $|l_2, m_2\rangle$, the resulting state  $|L, M\rangle$  is given by:
+- When combining two angular momentum states  $\vert l_1, m_1\rangle$  and  $\vert l_2, m_2\rangle$, the resulting state  $\vert L, M\rangle$  is given by:
 
 $$
-  |L, M\rangle = \sum_{m_1, m_2} C_{L, M}^{l_1, m_1; l_2, m_2} |l_1, m_1\rangle |l_2, m_2\rangle
+
+|L, M\rangle = \sum_{m_1, m_2} C_{L, M}^{l_1, m_1; l_2, m_2} |l_1, m_1\rangle |l_2, m_2\rangle
+
 $$
-  where  $C_{L, M}^{l_1, m_1; l_2, m_2}$  are the Clebsch-Gordan coefficients.
+
+where  $C_{L, M}^{l_1, m_1; l_2, m_2}$  are the Clebsch-Gordan coefficients.
 
 ### 3. **$O(3)$ Rotations**
 
