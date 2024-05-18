@@ -20,10 +20,10 @@ plugins:
 collections:
   posts:
     output: true
-    permalink: /posts/:title/
+    permalink: /posts/:path/
   knowledge:
     output: true
-    permalink: /knowledge/:title/
+    permalink: /knowledge/:path/
 
 # Exclude these files and directories from the site build
 exclude:
