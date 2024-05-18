@@ -1,8 +1,3 @@
----
-layout: post
-title: "MACE (Message Passing ACE)"
----
-
 # MACE (Message Passing Atomic Cluster Expansion)
 
 #### **Introduction**
