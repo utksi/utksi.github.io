@@ -1,6 +1,6 @@
-    - Proposed by [Finkelstein et al.](https://arxiv.org/abs/2310.01267)
-
 ## Detailed Analysis of Cooperative Graph Neural Networks (Co-GNNs)
+
+- Proposed by [Finkelstein et al.](https://arxiv.org/abs/2310.01267)
 
 ### **Framework Overview**
 
