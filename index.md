@@ -56,7 +56,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/python.jpg">
     <div class="languagesText">
       <strong>Python</strong>  
-      I do most of my work with this (often as a wrapper for C).
+      I do most of my work with this (sometimes as a wrapper for C).
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -64,7 +64,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/fortran.png">
     <div class="languagesText">
       <strong>Fortran</strong>  
-      Most solvers I work with are written in F95 or F2003 standard.
+      Most solvers I work with are written in F2003 or F2008 standard.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -72,7 +72,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/c.png">
     <div class="languagesText">
       <strong>C</strong>  
-      Barely use it, since I almost never do low-level things, and if I do, I either use C++ or use a python wrapper.
+      No shade, but for my usecase it's not very useful (python/C++ wrapper works).
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -80,7 +80,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/cpp.png">
     <div class="languagesText">
       <strong>C++</strong>  
-      The first language I ever tried to learn, didn't go well, obviously. Now I use it for low-level things.
+      I use it for low-level things.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -112,7 +112,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/css.png">
     <div class="languagesText">
       <strong>CSS</strong>  
-      It makes websites look pretty.
+      Useful - yes (website prettifier). Necessary - no (simple is best).
     </div>
   </div>
 </div>
