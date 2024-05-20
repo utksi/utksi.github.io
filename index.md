@@ -5,6 +5,8 @@ title: "Home - UT's Blog"
 
 # Home Page
 
+**Still porting. Everything will eventually be here. This message will disappear when it happens.**
+
 Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
 - **Primary OS**: macOS    
