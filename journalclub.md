@@ -8,7 +8,7 @@ title: "Journal Club - UT's Blog"
 Here I write summaries of papers I find interesting.
 
 <div class="listContainer">
-  {% for article in site.knowledge %}
+  {% for article in site.journalclub %}
   <div class="listItem">
     <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
     <p>{{ article.description }}</p>
