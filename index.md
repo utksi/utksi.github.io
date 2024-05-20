@@ -14,7 +14,7 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
 
 <div>
-    <h2>Research notes</h2>
+    <h2>Research notes (Last three posts)</h2>
       <ul>
       {% for article in site.knowledge limit:3 %}
       <li>
@@ -23,7 +23,7 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
       </li>
       {% endfor %}
       </ul>
-<h2>Personal</h2>
+    <h2>Personal (Last three posts)</h2>
       <ul>
       {% for post in site.posts limit:3 %}
       <li>
