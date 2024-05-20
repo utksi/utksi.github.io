@@ -53,7 +53,7 @@ Here's a list of programming languages I work with or have worked with before!
 
 <div class="listContainer">
   <div class="listItem">
-    <img src="/resources/langs/python.jpg">
+    <img src="/resources/langs/python.png">
     <div class="languagesText">
       <strong>Python</strong>  
       I do most of my work with this (sometimes as a wrapper for C).
