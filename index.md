@@ -16,7 +16,7 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
 
 <div>
-    <h2>Research notes (Last three posts)</h2>
+    <h2>Research notes [-3:0]</h2>
       <ul>
       {% for article in site.knowledge limit:3 %}
       <li>
@@ -25,7 +25,7 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
       </li>
       {% endfor %}
       </ul>
-    <h2>Journal Club (Last three posts)</h2>
+    <h2>Journal Club [-3:0]</h2>
       <ul>
       {% for paper in site.journalclub limit:3 %}
       <li>
@@ -34,7 +34,7 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
       </li>
       {% endfor %}
       </ul>
-    <h2>Personal (Last three posts)</h2>
+    <h2>Personal [-3:0]</h2>
       <ul>
       {% for post in site.posts limit:3 %}
       <li>
@@ -47,14 +47,24 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
 ## My Programming Languages
 
+**Holds mostly true till a couple years ago. Now I have picked up fortran! huehuehue.**
+
 Here's a list of programming languages I work with or have worked with before!
 
 <div class="listContainer">
   <div class="listItem">
-    <img src="/resources/langs/csharp.png">
+    <img src="/resources/langs/python.jpg">
     <div class="languagesText">
-      <strong>C#</strong>  
-      It's my favorite language so far. I do most of my programs in it, I can't live without it.
+      <strong>Python</strong>  
+      I do most of my work with this (often as a wrapper for C).
+    </div>
+  </div>
+  <div class="listSeparator"></div>
+  <div class="listItem">
+    <img src="/resources/langs/fortran.png">
+    <div class="languagesText">
+      <strong>Fortran</strong>  
+      Most solvers I work with are written in F95 or F2003 standard.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -62,7 +72,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/c.png">
     <div class="languagesText">
       <strong>C</strong>  
-      Barely use it, since I almost never do low-level things, and if I do, I either use C++ or use P/Invoke on C#.
+      Barely use it, since I almost never do low-level things, and if I do, I either use C++ or use a python wrapper.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -78,7 +88,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/java.png">
     <div class="languagesText">
       <strong>Java</strong>  
-      I tried to learn it before I settled with C#. I barely use it anymore.
+      死ぬ
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -86,7 +96,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/js.png">
     <div class="languagesText">
       <strong>JavaScript</strong>  
-      I absolutely despise it, but it's a necessity for websites.
+      It's a necessity unfortunately.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -94,7 +104,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/html.png">
     <div class="languagesText">
       <strong>HTML</strong>  
-      I also absolutely despise it, but it's at least less insane than JS.
+       Useful. Simple.
     </div>
   </div>
   <div class="listSeparator"></div>
@@ -102,7 +112,7 @@ Here's a list of programming languages I work with or have worked with before!
     <img src="/resources/langs/css.png">
     <div class="languagesText">
       <strong>CSS</strong>  
-      This wretched thing should not be alive. It makes websites look pretty though.
+      It makes websites look pretty.
     </div>
   </div>
 </div>
