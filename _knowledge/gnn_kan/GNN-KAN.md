@@ -21,7 +21,7 @@
 
       $$\mathbf{m}_{ij} = f_m(\mathbf{x}_i, \mathbf{x}_j, \mathbf{e}'_{ij})$$
 
-      where $f_m$ computes messages using node features $\mathbf{x}_i \& \mathbf{x}_j$, and transformed edge features $\mathbf{e}'_{ij}$.
+      where $f_m$ computes messages using node features $\mathbf{x}_i$ \& $\mathbf{x}_j$ , and transformed edge features $\mathbf{e}'_{ij}$.
 
     c. **Message Aggregation**:
 
