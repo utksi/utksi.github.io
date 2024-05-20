@@ -8,10 +8,10 @@ title: "Journal Club - UT's Blog"
 Here I write summaries of papers I find interesting.
 
 <div class="listContainer">
-  {% for article in site.journalclub %}
+  {% for paper in site.journalclub %}
   <div class="listItem">
-    <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
-    <p>{{ article.description }}</p>
+    <a href="{{ paper.url }}">{{ paper.title }}</a> - {{ paper.date | date_to_string }}
+    <p>{{ paper.description }}</p>
   </div>
   <div class="listSeparator"></div>
   {% endfor %}

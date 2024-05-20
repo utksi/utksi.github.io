@@ -25,10 +25,10 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
       </ul>
     <h2>Journal Club (Last three posts)</h2>
       <ul>
-      {% for article in site.journalclub limit:3 %}
+      {% for paper in site.journalclub limit:3 %}
       <li>
-      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
-      <p>{{ article.description }}</p>
+      <a href="{{ paper.url }}">{{ paper.title }}</a> - {{ paper.date | date_to_string }}
+      <p>{{ paper.description }}</p>
       </li>
       {% endfor %}
       </ul>
