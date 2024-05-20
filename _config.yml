@@ -24,6 +24,9 @@ collections:
   knowledge:
     output: true
     permalink: /knowledge/:title/
+  journalclub:
+    output: true
+    permalink: /journalclub/:title/
 
 # Exclude these files and directories from the site build
 exclude:
