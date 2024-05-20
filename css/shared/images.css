@@ -1,13 +1,13 @@
 :root[data-applied-mode="light"]
 {
 	--github-icon: url("/resources/social/github.svg");
-	--github-icon: url("/resources/social/twitter-light.png");
+	--twitter-icon: url("/resources/social/twitter-light.png");
 	--external-link-icon: url("/resources/external-link-dark.svg");
 }
 
 :root[data-applied-mode="dark"]
 {
 	--github-icon: url("/resources/social/github-light.svg");
-	--github-icon: url("/resources/social/twitter.png");
+	--twitter-icon: url("/resources/social/twitter.png");
 	--external-link-icon: url("/resources/external-link.svg");
 }
