@@ -23,6 +23,15 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
       </li>
       {% endfor %}
       </ul>
+    <h2>Journal Club (Last three posts)</h2>
+      <ul>
+      {% for article in site.journalclub limit:3 %}
+      <li>
+      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
+      <p>{{ article.description }}</p>
+      </li>
+      {% endfor %}
+      </ul>
     <h2>Personal (Last three posts)</h2>
       <ul>
       {% for post in site.posts limit:3 %}

@@ -74,6 +74,12 @@ defaults:
       author: "Utkarsh"
   - scope:
       path: ""
+      type: "journalclub"
+    values:
+      layout: "default"
+      author: "Utkarsh"
+  - scope:
+      path: ""
       type: "pages"
     values:
       layout: "default" # Ensure this matches the layout you want for pages
