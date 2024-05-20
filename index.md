@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Home - UT's Blog"
+title: "Home - Utkarsh Singh"
 ---
 
 # Home Page
