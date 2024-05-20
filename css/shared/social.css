@@ -12,7 +12,8 @@
 {
 	background-image: var(--github-icon);
 }
-/*twitter/x ICON*/
+
+/*twitter ICON*/
 .socialMediaIcon.twitter
 {
 	background-image: var(--twitter-icon);
