@@ -10,6 +10,7 @@
    - Edges: $\mathbf{e}_{ij}$ (edge features)
 
 2. **Message Passing Layer** (per layer):
+
     a. **Edge Feature Transformation**:
 
       $$\mathbf{e}'_{ij} = f_e(\mathbf{e}_{ij})$$
@@ -47,8 +48,8 @@
    - Edges: $\mathbf{e}_{ij}$ (edge features)
 
 2. **Learnable Edge Feature Transformation**:
-   
-   a. **Fourier-based Edge Transformation**:
+    
+    - **Fourier-based Edge Transformation**:
    
       $$\mathbf{e}'_{ij} = \text{FourierTransform}(\mathbf{e}_{ij})$$
 
