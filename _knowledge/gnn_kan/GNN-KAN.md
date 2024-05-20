@@ -5,11 +5,13 @@
 ## General Message Passing Neural Network (MPNN)
 
 1. **Input Node and Edge Features**:
+
    - Nodes: $\mathbf{x}_i$ (node features)
    - Edges: $\mathbf{e}_{ij}$ (edge features)
 
 2. **Message Passing Layer** (per layer):
-   a. **Edge Feature Transformation**:
+
+a. **Edge Feature Transformation**:
 
       $$
       \mathbf{e}'_{ij} = f_e(\mathbf{e}_{ij})
@@ -18,13 +20,15 @@
    where $f_e$ is a transformation function applied to edge features.
 
    b. **Message Computation**:
+
       $$
       \mathbf{m}_{ij} = f_m(\mathbf{x}_i, \mathbf{x}_j, \mathbf{e}'_{ij})
       $$
    
-   where $f_m$ computes messages using node features $\mathbf{x}_i$ and $\mathbf{x}_j$, and transformed edge features $\mathbf{e}'_{ij}$.
+   where $f_m$ computes messages using node features $\mathbf{x}_i\ \text{and}\ \mathbf{x}_j$, and transformed edge features $\mathbf{e}'_{ij}$.
 
    c. **Message Aggregation**:
+
       $$
       \mathbf{m}_i = \sum_{j \in \mathcal{N}(i)} \mathbf{m}_{ij}
       $$
@@ -32,25 +36,30 @@
    where $\mathcal{N}(i)$ denotes the set of neighbors of node $i$.
 
    d. **Node Feature Update**:
-      $$
+   
+   $$
       \mathbf{x}'_i = f_n(\mathbf{x}_i, \mathbf{m}_i)
       $$
    
    where $f_n$ updates node features using the aggregated messages $\mathbf{m}_i$.
 
 3. **Output Node and Edge Features**:
+   
    - Nodes: $\mathbf{x}'_i$ (updated node features)
    - Edges: $\mathbf{e}'_{ij}$ (updated edge features)
 
 ## E3-Equivariant GNN with Learnable Activation Functions on Edges
 
 1. **Input Node and Edge Features**:
+   
    - Nodes: $\mathbf{x}_i$ (node features)
    - Edges: $\mathbf{e}_{ij}$ (edge features)
 
 2. **Learnable Edge Feature Transformation**:
+   
    a. **Fourier-based Edge Transformation**:
-      $$
+   
+   $$
       \mathbf{e}'_{ij} = \text{FourierTransform}(\mathbf{e}_{ij})
       $$
    
@@ -63,6 +72,7 @@
 Here, $a_{ij,k}$ and $b_{ij,k}$ are learnable parameters, and $K$ is the number of Fourier terms.
 
 3. **Message Passing and Aggregation**:
+   
    a. **Message Computation**:
       $$
       \mathbf{m}_{ij} = \mathbf{e}'_{ij} \odot \mathbf{x}_j
@@ -71,18 +81,21 @@ Here, $a_{ij,k}$ and $b_{ij,k}$ are learnable parameters, and $K$ is the number 
       where $\odot$ denotes element-wise multiplication, combining the transformed edge features $\mathbf{e}'_{ij}$ with the neighboring node features $\mathbf{x}_j$.
 
    b. **Message Aggregation**:
-      $$
+   
+   $$
       \mathbf{m}_i = \sum_{j \in \mathcal{N}(i)} \mathbf{m}_{ij}
       $$
 
    c. **Simple Node Feature Transformation**:
-      $$
+   
+   $$
       \mathbf{x}'_i = \mathbf{W} (\mathbf{x}_i + \mathbf{m}_i) + \mathbf{b}
       $$
       
       where $\mathbf{W}$ is a learnable weight matrix and $\mathbf{b}$ is a bias vector.
 
 4. **Output Node and Edge Features**:
+   
    - Nodes: $\mathbf{x}'_i$ (updated node features)
    - Edges: $\mathbf{e}'_{ij}$ (updated edge features)
 
