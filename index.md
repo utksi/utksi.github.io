@@ -14,6 +14,12 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 - **Primary IDE**: VSCode 2024
 - **Secondary IDE**: neovim
 
+<p>I somehow dreamt of this</p>
+<video width="320" height="240" controls>
+  <source src="/_videos/dragonslayer.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
 
 <div>
     <h2>Research notes [-3:0]</h2>
