@@ -6,4 +6,4 @@ edited: 2022-05-24 09:57
 description: "The first ever post!"
 ---
 
-{%include_relative the_first_post/post.md}
+{% include_relative the_first_post/post.md %}
