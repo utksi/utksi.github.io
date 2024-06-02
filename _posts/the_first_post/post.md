@@ -10,4 +10,4 @@ Yet somehow, this is the funniest shit out of context.
 {:/nomarkdown}
 
 
-*via Dragonslayer (1981)*
+*via* $\textt{Dragonslayer\ (1981)}$
