@@ -1,0 +1,8 @@
+---
+layout: post
+title: "[Journal Club] Phonon-induced renormalization of Exchange interactions in 2-D magnets"
+date: 2024-06-13 14:21
+description: "A high level overview of main ideas from Katsnelson et al."
+---
+
+{% include_relative exchange_renormalization/exchange_renormalization.md %}
