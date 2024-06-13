@@ -1,7 +1,7 @@
 :root[data-applied-mode="light"]
 {
 	--github-icon: url("/resources/social/github.svg");
-	--twitter-icon: url("/resources/social/twitter-light.png");
+	--twitter-icon: url("/resources/social/twitter-light.svg");
 	--external-link-icon: url("/resources/external-link-dark.svg");
 }
 
