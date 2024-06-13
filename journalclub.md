@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Journal Club - UT's Blog"
+title: "Journal Club - Utkarsh"
 ---
 
 # Journal Club

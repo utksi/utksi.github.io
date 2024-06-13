@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Projects - UT's Blog"
+title: "Projects - Utkarsh"
 ---
 
 # Projects

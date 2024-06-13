@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Posts - UT's Blog"
+title: "Posts - Utkarsh"
 ---
 
 # Blog Posts

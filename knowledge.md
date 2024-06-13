@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Knowledge - UT's Blog"
+title: "Knowledge - Utkarsh"
 ---
 
 # Knowledge Base
