@@ -5,8 +5,6 @@ description: "This is my personal blog where I post research notes + personal st
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://utksi.github.io" # your GitHub Pages URL
 github_username: "utksi"
-include:
-  - _static
 
 # Build settings
 markdown: kramdown
