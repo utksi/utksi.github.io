@@ -16,21 +16,21 @@ Hi! Welcome to my personal website. I'm [Utkarsh](https://github.com/utksi).
 
 
 <div>
-    <h2>Research notes [-3:0]</h2>
-      <ul>
-      {% for article in site.knowledge limit:3 %}
-      <li>
-      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
-      <p>{{ article.description }}</p>
-      </li>
-      {% endfor %}
-      </ul>
     <h2>Journal Club [-3:0]</h2>
       <ul>
       {% for paper in site.journalclub limit:3 %}
       <li>
       <a href="{{ paper.url }}">{{ paper.title }}</a> - {{ paper.date | date_to_string }}
       <p>{{ paper.description }}</p>
+      </li>
+      {% endfor %}
+      </ul>
+    <h2>Research notes [-3:0]</h2>
+      <ul>
+      {% for article in site.knowledge limit:3 %}
+      <li>
+      <a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date | date_to_string }}
+      <p>{{ article.description }}</p>
       </li>
       {% endfor %}
       </ul>
