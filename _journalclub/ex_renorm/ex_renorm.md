@@ -1,5 +1,4 @@
 - Via [Badrtdinov, Katsnelson, Rudenko](https://arxiv.org/abs/2406.05229)
-
 - I find this very interesting. There have been recent (relatively) works on introducing spin-lattice interaction in practical implementation(s) of ASD solvers [See the work from Anders Bergman and Anna Delin (2022-2023)], but renormalization is not taken care of in those things explicitly. To get a measure of how much the exchange interactions are affected as a function of temperature independent of explicit electron-phonon interactions, this could be interesting.
 
 ## First, a one line (or two :D) introduction to key concepts
