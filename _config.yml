@@ -90,4 +90,4 @@ defaults:
 # Permalinks settings
 permalink: pretty
 verbose: true
-
+future: true
