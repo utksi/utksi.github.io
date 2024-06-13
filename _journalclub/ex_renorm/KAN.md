@@ -1,99 +1,195 @@
-- Proposed by Max Tegmark's group. See [Liu et al](https://arxiv.org/abs/2404.19756)
-- A hot topic on twitter - a matter of a lot of debate.
+- Via [Badrtdinov, Katsnelson \& Rudenko](https://arxiv.org/abs/2406.05229)
 
-The paper "KAN: Kolmogorov–Arnold Networks" proposes Kolmogorov-Arnold Networks (KANs) as an alternative to Multi-Layer Perceptrons (MLPs). The core idea behind KANs is inspired by the Kolmogorov-Arnold representation theorem, which states that any multivariate continuous function can be represented as a sum of continuous functions of one variable. This section will summarize the technical details of the paper, focusing on the mathematical formulations.
+- I find this very interesting. There have been recent (relatively) works on introducing spin-lattice interaction in practical implementation(s) of ASD solvers [See the work from Anders Bergman and Anna Delin (2022-2023)], but renormalization is not taken care of in those things explicitly. To get a measure of how much the exchange interactions are affected as a function of temperature independent of explicit electron-phonon interactions, this could be interesting.
 
-### 1. Introduction
+## First, a one line (or two :D) introduction to key concepts
 
-The motivation for KANs stems from the limitations of MLPs, such as fixed activation functions on nodes and linear weights. MLPs rely heavily on the universal approximation theorem, but their structure can be less efficient and interpretable. KANs, on the other hand, utilize learnable activation functions on edges and replace linear weights with univariate functions parametrized as splines.
+**Magnetism in 2D Materials**:
+- **2D Magnets** are materials with magnetic properties confined to two dimensions, influenced significantly by quantum effects. They are promising for applications in spintronics, where electronic spins are used to store, process, and transfer information.
 
-### 2. Kolmogorov-Arnold Representation Theorem
+**Heisenberg Model**:
+- Describes magnetic interactions through pairwise exchange interactions.
+- The Hamiltonian:
+  $$ H_0 = \sum_{i > j} J_{ij} \mathbf{S}_i \cdot \mathbf{S}_j $$
+  where $J_{ij}$ is the exchange interaction between spins $\mathbf{S}_i$ and $\mathbf{S}_j$.
 
-The Kolmogorov-Arnold representation theorem states:
+**Electron-Phonon Coupling**:
+- Refers to interactions between electrons and lattice vibrations (phonons).
+- These interactions affect various electronic properties, including magnetic exchange interactions.
 
-$$
-f(x) = \sum_{q=1}^{2n+1} \Phi_q \left( \sum_{p=1}^n \varphi_{q,p}(x_p) \right)
-$$
+**Green’s Functions and Self-Energy**:
+- **Green’s Functions** $G^{\sigma}_{ij}(i\omega_n)$: Describe electron propagation with spin $\sigma$.
+- **Self-Energy** $\Sigma^{\sigma}_k(i\omega_n)$: Represents interaction effects on electrons due to phonons and other electrons.
 
-where $\varphi_{q,p} : [0, 1] \to \mathbb{R}$ and $\Phi_q : \mathbb{R} \to \mathbb{R}$.
+## 1. Theory and Model
 
-### 3. KAN Architecture
-
-KANs generalize the representation theorem to arbitrary depths and widths. Each weight parameter in KANs is replaced by a learnable 1D function (spline).
-
-#### 3.1. Mathematical Formulation of KANs
-
-Define a KAN layer with $n_{\text{in}}$-dimensional inputs and $n_{\text{out}}$-dimensional outputs as a matrix of 1D functions:
-
-$$
-\Phi = \{ \varphi_{q,p} \}, \quad p = 1, 2, \ldots, n_{\text{in}}, \quad q = 1, 2, \ldots, n_{\text{out}}
-$$
-
-Activation function on edge $\varphi_{l,j,i}$ between layer $l$ and $l+1$ is given by:
+The paper extends the Heisenberg model to include electron-phonon interactions, recalculating the exchange interaction $J_{ij}$ using the magnetic force theorem:
 
 $$
-\varphi_{l,j,i}(x) = w (b(x) + \text{spline}(x))
+J_{ij} = 2 \text{Tr}_{\omega L} \left[ \Delta_i G^{\uparrow}_{ij}(i\omega_n) \Delta_j G^{\downarrow}_{ji}(i\omega_n) \right] S^{-2}
 $$
 
-where $b(x) = \text{silu}(x) = \frac{x}{1 + e^{-x}}$.
+where:
+- $\Delta_i$ is the exchange splitting at lattice site $i$.
+- $G^{\sigma}_{ij}(i\omega_n)$ is the spin-polarized electron propagator.
+- $\text{Tr}_{\omega L}$ denotes the trace over Matsubara frequencies $i\omega_n$ and orbital indices $L$.
 
-The output of each layer is computed as:
-
-$$
-x_{l+1, j} = \sum_{i=1}^{n_l} \varphi_{l,j,i}(x_{l,i})
-$$
-
-in matrix form:
+Incorporating electron-phonon interactions, the Green’s function is renormalized using the Dyson equation:
 
 $$
-x_{l+1} = \Phi_l x_l
+G^{-1}_k(i\omega_n) \rightarrow \tilde{G}^{-1}_k(i\omega_n) = G^{-1}_k(i\omega_n) - \Sigma_k(i\omega_n)
 $$
 
-where $\Phi_l$ is the function matrix of layer $l$.
-
-### 4. Approximation Abilities and Scaling Laws
-
-KANs can approximate functions by decomposing high-dimensional problems into several 1D problems, effectively avoiding the curse of dimensionality.
-
-#### Theorem 2.1: Approximation Bound
-
-Let $f(x)$ be represented as:
+This leads to a renormalized exchange splitting:
 
 $$
-f = (\Phi_{L-1} \circ \Phi_{L-2} \circ \cdots \circ \Phi_1 \circ \Phi_0)x
+\Delta \rightarrow \tilde{\Delta}_k(i\omega_n) = \Delta + \Sigma^{\uparrow}_k(i\omega_n) - \Sigma^{\downarrow}_k(i\omega_n)
 $$
 
-For each $\Phi_{l,i,j}$, there exist $k$-th order B-spline functions $\Phi_{l,i,j}^G$ such that:
+where the self-energy $\Sigma^{\sigma}_k(i\omega_n)$ is given by:
 
 $$
-\| f - (\Phi_{L-1}^G \circ \Phi_{L-2}^G \circ \cdots \circ \Phi_1^G \circ \Phi_0^G)x \|_{C^m} \leq C G^{-k-1+m}
+\Sigma^{\sigma}_k(i\omega_n) = -T \sum_{k' \nu m} G^{\sigma}_{k'}(i\omega_n - i\omega_m) |g^{\nu \sigma}_{kk'}|^2 D_{k-k'}(i\omega_n - i\omega_m)
 $$
 
-where $G$ is the grid size and $C$ depends on $f$ and its representation.
+Here, $g^{\nu \sigma}_{kk'}$ is the electron-phonon coupling vertex, and $D_q(i\omega_n)$ is the phonon propagator.
 
-### 5. Grid Extension Technique
+**Context**: This theoretical framework allows the authors to predict how the electron-phonon interactions influence the magnetic properties of 2D materials by renormalizing the exchange interactions between spins.
 
-KANs can increase accuracy by refining the grid used in splines:
+## 2. Square Lattice Model
+
+To illustrate the effect, the authors use a square lattice model at half-filling with the Hamiltonian:
 
 $$
-\{c'_j\} = \arg\min_{\{c'_j\}} E_{x \sim p(x)} \left( \sum_{j=0}^{G2+k-1} c'_j B'_j(x) - \sum_{i=0}^{G1+k-1} c_i B_i(x) \right)^2
+H = t \sum_{\langle ij \rangle \sigma} c^{\dagger}_{i\sigma} c_{j\sigma} + \frac{\Delta}{2} \sum_i (n^{\uparrow}_i - n^{\downarrow}_i) + \sum_q \omega_q b^{\dagger}_q b_q + \sum_{q, \langle ij \rangle \sigma} g_q (b^{\dagger}_q + b_{-q}) c^{\dagger}_{i\sigma} c_{j\sigma}
 $$
 
-### 6. Simplification Techniques
+where:
+- $t$ is the nearest-neighbor hopping.
+- $\Delta$ is the on-site exchange splitting.
+- $\omega_q$ is the phonon frequency.
+- $g_q$ is the electron-phonon coupling constant.
 
-KANs can be made more interpretable by sparsification, pruning, and symbolification. The L1 norm and entropy regularization can be used to sparsify the network.
+The self-energy in the high-temperature limit simplifies to:
 
-### 7. Toy Examples and Empirical Results
+$$
+\Sigma^{\sigma}_k(\omega, T) = 2\lambda \frac{k_BT}{N^{\sigma}_F} \sum_q G^{\sigma}_{k+q}(\omega)
+$$
 
-KANs were shown to have better scaling laws than MLPs, achieving lower test losses with fewer parameters in various toy datasets and special functions.
+where $\lambda$ is the dimensionless electron-phonon coupling constant.
 
-#### Example Functions:
+**Context**: The square lattice model serves as a simple yet effective system to understand the temperature dependence of exchange interactions due to electron-phonon coupling.
 
-1. Bessel function: $f(x) = J_0(20x)$
-2. High-dimensional function: $f(x_1, \ldots, x_{100}) = \exp\left( \frac{1}{100} \sum_{i=1}^{100} \sin^2(\pi x_i / 2) \right)$
+## 3. Renormalization of Exchange Interactions
 
-KANs can achieve near-theoretical scaling exponents $\alpha = 4$, outperforming MLPs in accuracy and parameter efficiency.
+The main result shows that the exchange interaction is renormalized linearly with temperature due to electron-phonon coupling:
+
+$$
+J(T) = J(0) - c\lambda T
+$$
+
+where $c$ is a renormalization constant.
+
+**Derivation**:
+- The linear temperature dependence arises from the self-energy correction, which modifies the exchange interaction strength $J_{ij}$.
+- The renormalization constant $c$ is determined by the specific electronic structure of the material and the strength of the electron-phonon coupling.
+
+## 4. Application to $\mathrm{Fe_3GeTe_2}$
+
+For the metallic 2D ferromagnet $\mathrm{Fe_3GeTe_2}$, the authors use first-principles calculations to determine the electronic and phononic structures. The temperature dependence of the exchange interactions is calculated, showing a reduction of the Curie temperature by about 10% due to electron-phonon interactions.
+
+**First-Principles Calculation**:
+- **Density Functional Theory (DFT)** is employed to calculate the electronic structure.
+- **Density Functional Perturbation Theory (DFPT)** is used for phonon calculations.
+- The electronic structure in the vicinity of the Fermi level is parameterized using maximally localized Wannier functions.
+
+**Context**: Wannierization is an invaluable tool for simply writing the hamiltonian in a local basis in the vicinity of the Fermi level, such a model is easier to solve exactly at lower (read: more rigorous) levels of theory as well, which is essential for evaluating the temperature-dependent exchange interactions.
+
+## 5. Spin-Wave Renormalization
+
+**Spin-Wave Theory**:
+- Spin waves, or magnons, are collective excitations in a magnetically ordered system.
+- The stability of magnetic order is influenced by spin-wave spectra, which can be calculated by diagonalizing the spin-wave Hamiltonian.
+
+The Heisenberg model with single-ion anisotropy (SIA) is used to describe the spin waves:
+
+$$
+H = H_0 + A \sum_i (S^z_i)^2
+$$
+
+where $A$ is the anisotropy parameter.
+
+**Magnon Eigenvectors and Spectra**:
+- Magnon frequencies $\Omega_{q \nu}$ are obtained by diagonalizing the spin-wave Hamiltonian:
+
+$$
+H^{\text{SW}}_{\mu \nu}(q) = \left[ \delta_{\mu \nu} \left( 2A \Phi + \sum_{\chi} J_{\mu \chi}(0) \right) - J_{\mu \nu}(q) \right] \langle S^z \rangle
+$$
+
+where:
+- $J_{\mu \nu}(q)$ are the Fourier transforms of the exchange interaction matrix.
+- $\Phi = 1 - \left( 1 - \langle S^2_z \rangle / 2 \right)$ is the Anderson-Callen decoupling factor for $S = 1$.
+
+The magnon spectra exhibit optical and acoustic branches. Near the $\Gamma$ point, the acoustic branch disperses quadratically:
+
+$$
+\Omega_q \approx \Omega_0 + Dq^2
+$$
+
+where $D$ is the spin-stiffness constant and $\Omega_0$ is the gap due to single-ion anisotropy.
+
+**Temperature-Dependent Magnetization**:
+- Magnetization $\langle S^z \rangle$ is determined by spin-wave excitations, using the Tyablikov decoupling (RPA):
+
+$$
+\langle (S^z_i)^n S^-_i S^+_i \rangle = \langle [S^+_i, (S^z_i)^n S^-_i] \rangle \sum_{q \nu} \langle b^{\dagger}_{q \nu} b_{q \nu} \rangle
+$$
+
+where $\langle b^{\dagger}_{q \nu} b_{q \nu} \rangle = [\exp(\Omega_{q \nu} / k_BT) - 1]^{-1}$ is the equilibrium magnon distribution.
+
+By solving these equations self-consistently, the renormalized exchange interactions $J(T)$ are used to calculate the Curie temperature $T_C$. The renormalized interactions lead to a reduced $T_C$ compared to the non-renormalized case.
+
+**Context**: The detailed calculation of spin-wave spectra and their temperature dependence provides insight into the stability of magnetic order and how it is influenced by electron-phonon interactions.
+
+## Discussion
+
+The discussion highlights several key points:
+
+1. **Adiabatic vs. Antiadiabatic Electron-Phonon Coupling**:
+   - Most systems can be treated adiabatically, where phonon energies are much smaller than electron energies.
+   - For stronger renormalization effects, systems with narrow electron bands or high phonon energies relative to electron energies need to be considered.
+
+2. **Out-of-Equilibrium Effects**:
+   - Non-equilibrium distributions, such as those induced by charge currents or laser fields, can enhance electron-phonon coupling.
+   - This can lead to significant changes in exchange interactions and magnetic properties.
+
+3. **Anisotropic Magnetic Interactions**:
+   - The study focuses on isotropic exchange interactions, but anisotropic interactions, such as Dzyaloshinskii-Moriya interaction (DMI), can exhibit stronger renormalization effects.
+
+**Conclusion**: The study demonstrates that electron-phonon coupling significantly affects the magnetic properties of 2D metallic magnets by renormalizing the exchange interactions. This renormalization leads to a suppression of magnetic ordering temperatures and modifies the magnon spectra, which has implications for the design and application of 2D magnetic materials in technology.
+
+### One (or two :D) line mathematical context
+
+**Magnetic Force Theorem**:
+- The exchange interaction $J_{ij}$ is derived from the magnetic force theorem, which involves calculating the energy cost of rotating spins $\mathbf{S}_i$ and $\mathbf{S}_j$.
+- The exchange interaction is given by the integral over the Brillouin zone of the product of the spin-resolved Green's functions and exchange splitting.
+
+**Dyson Equation**:
+- The renormalization of Green’s functions due to self-energy $\Sigma_k(i\omega_n)$ is given by the Dyson equation.
+- This renormalizes both the propagators and the exchange splitting.
+
+**Electron-Phonon Self-Energy**:
+- The self-energy $\Sigma^{\sigma}_k(i\omega_n)$ represents the correction to the electron’s energy due to its interaction with phonons.
+- The self-energy is calculated using second-order perturbation theory in the electron-phonon coupling.
+
+**Spin-Wave Theory**:
+- The spin-wave Hamiltonian is derived by expanding the Heisenberg Hamiltonian to second order in spin deviations.
+- Diagonalizing the resulting Hamiltonian gives the magnon eigenvalues (frequencies) and eigenvectors.
+
+**Temperature-Dependent Magnetization**:
+- The magnetization $\langle S^z \rangle$ is obtained using the Tyablikov decoupling method, which approximates the thermal averages of spin operators.
+- The self-consistent solution of the magnetization equations provides the temperature dependence of $\langle S^z \rangle$ and $J(T)$.
 
 ### Conclusion
 
-KANs provide a novel approach to neural network design, leveraging the Kolmogorov-Arnold representation theorem to achieve better performance and interpretability compared to traditional MLPs. The use of learnable activation functions on edges and splines allows for greater flexibility and efficiency in function approximation.
+I haven't really thought of more implications, not further than what the authors imply.
