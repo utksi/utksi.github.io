@@ -8,6 +8,6 @@
 :root[data-applied-mode="dark"]
 {
 	--github-icon: url("/resources/social/github-light.svg");
-	--twitter-icon: url("/resources/social/twitter.png");
+	--twitter-icon: url("/resources/social/twitter.svg");
 	--external-link-icon: url("/resources/external-link.svg");
 }
