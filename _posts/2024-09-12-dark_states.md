@@ -4,8 +4,8 @@ title: "[Stuff I read] Dark states of electrons in a quantum system with two pai
 date: 2024-09-13 12:59:44
 description: "A high-level summary of main ideas from Chung et al."
 tags: physics spectroscopy materials-science
-categories: journal-club
-giscus_comments: true
+categories: stuff-i-read
+giscus_comments: false
 related_posts: false
 toc: true
 ---
@@ -20,7 +20,7 @@ This review discusses the discovery of **condensed-matter dark states** in the m
 
 In quantum mechanics, a **dark state** refers to a state that cannot absorb or emit photons and is thus undetectable through typical spectroscopic methods. These states are typically well-known in atomic and molecular systems where they arise due to **quantum interference** or **conservation of angular momentum**. 
 
-In the condensed matter context, dark states have been less explored, especially when caused by interference between **sublattices**. This paper expands the concept to solid-state systems, where dark states emerge due to destructive interference within the crystal's sublattices. These states remain hidden from ARPES measurements because their transition matrix elements vanish.
+In the condensed matter context, dark states have been less explored, especially when caused by interference between **sublattices**. This paper expands the concept to solid-state systems, where dark states emerge due to destructive interference within the crystal’s sublattices. These states remain hidden from ARPES measurements because their transition matrix elements vanish.
 
 ### Key Definitions:
 - **Dark State**: A quantum state that does not interact with light and is therefore undetectable by traditional spectroscopic methods.
@@ -32,9 +32,9 @@ In the condensed matter context, dark states have been less explored, especially
 
 PdSe₂ is chosen for its crystal structure, which consists of two pairs of **sublattices** labeled A, B, C, and D. These sublattices are related by **glide-mirror symmetries**, which leads to specific **quantum phases** that control the interference patterns of electronic wavefunctions in the Brillouin zone.
 
-Mathematically, the electronic structure of PdSe₂ is described using the **tight-binding Hamiltonian** model. The dominant states arise from **Pd 4d orbitals**, and the relative phases \(\varphi_{AB}, \varphi_{AC}, \varphi_{AD}\) between sublattices dictate whether the interference is constructive or destructive.
+Mathematically, the electronic structure of PdSe₂ is described using the **tight-binding Hamiltonian** model. The dominant states arise from **Pd 4d orbitals**, and the relative phases $ \varphi_{AB}, \varphi_{AC}, \varphi_{AD} $ between sublattices dictate whether the interference is constructive or destructive.
 
-\[
+$$
 H_{PdSe_2} = 
 \begin{pmatrix}
 f_{AA} & f_{AB} & f_{AC} & f_{AD} \\
@@ -42,7 +42,7 @@ f_{AB} & f_{AA} & f_{AC} & f_{AD} \\
 f_{AC} & f_{AD} & f_{AA} & f_{AB} \\
 f_{AD} & f_{AC} & f_{AB} & f_{AA}
 \end{pmatrix}
-\]
+$$
 
 The key discovery here is that PdSe₂ has a unique sublattice arrangement where **multiple glide-mirror symmetries** connect these sublattices, resulting in **double destructive interference** under certain conditions, leading to the appearance of **dark states**. 
 
@@ -57,31 +57,31 @@ The key discovery here is that PdSe₂ has a unique sublattice arrangement where
 
 The experimental technique used in the paper, **ARPES**, allows researchers to probe the electronic band structure of a material. However, in PdSe₂, an entire band of electronic states in the Brillouin zone is **invisible** regardless of the photon energy or light polarization used. This is a clear indicator of **dark states** resulting from **sublattice interference**.
 
-The transition probability in ARPES is governed by **Fermi's Golden Rule**:
+The transition probability in ARPES is governed by **Fermi’s Golden Rule**:
 
-\[
+$$
 M_k = \int \psi_f^* (\mathbf{A} \cdot \mathbf{p}) \psi_i \, dV
-\]
+$$
 
 Where:
-- \(\mathbf{A}\) is the electromagnetic vector potential.
-- \(\mathbf{p}\) is the momentum operator.
-- \(\psi_i\) and \(\psi_f\) are the initial and final electronic states.
+- $ \mathbf{A} $ is the electromagnetic vector potential.
+- $ \mathbf{p} $ is the momentum operator.
+- $ \psi_i $ and $ \psi_f $ are the initial and final electronic states.
 
-The critical point in PdSe₂ is that the **interference between sublattices** can lead to **destructive interference** when certain relative quantum phases \(\varphi_{AB}, \varphi_{AC}, \varphi_{AD}\) cancel out the matrix elements \(M_k\). This makes some states completely **undetectable by ARPES**.
+The critical point in PdSe₂ is that the **interference between sublattices** can lead to **destructive interference** when certain relative quantum phases $ \varphi_{AB}, \varphi_{AC}, \varphi_{AD} $ cancel out the matrix elements $ M_k $. This makes some states completely **undetectable by ARPES**.
 
 The experimental data shows that with **p-polarized light**, only one of the **nine cuboidal Brillouin zones** exhibits detectable valence bands (centered at Γ₆). However, when using **s-polarized light**, even this valence band disappears, as shown in the data taken under identical experimental conditions.
 
 In summary:
 - With **p-polarized light**, constructive interference allows detection of the 000 state.
 - With **s-polarized light**, all pseudospin states vanish due to destructive interference.
-- Bands centered at \(\Gamma_{106}, \Gamma_{101}, \Gamma_{016}\) in the kx and ky directions are **not observed** regardless of the polarization.
+- Bands centered at $ \Gamma_{106}, \Gamma_{101}, \Gamma_{016} $ in the kx and ky directions are **not observed** regardless of the polarization.
 
 This clearly indicates the existence of **dark states** in PdSe₂, which are **undetectable** at any photon energy or light polarization due to **double destructive interference** in these sublattices.
 
 ### Key Definitions:
 - **ARPES**: A technique used to observe the energy and momentum distribution of electrons in a material, providing insights into its electronic structure.
-- **Fermi's Golden Rule**: A formula that calculates the transition probability per unit time for a quantum system interacting with an external perturbation.
+- **Fermi’s Golden Rule**: A formula that calculates the transition probability per unit time for a quantum system interacting with an external perturbation.
 - **p-polarized light**: Light in which the electric field oscillates parallel to the plane of incidence.
 - **s-polarized light**: Light in which the electric field oscillates perpendicular to the plane of incidence.
   
@@ -89,10 +89,10 @@ This clearly indicates the existence of **dark states** in PdSe₂, which are **
 
 ## 4. Phase Polarization and Quantum States in the Brillouin Zone
 
-A major finding in this paper is the identification of **phase polarization** in the Brillouin zone of PdSe₂. The electronic wavefunctions in PdSe₂ are fully polarized to one of four possible states: **000, 0ππ, π0π, ππ0**, depending on the relative quantum phases \(\varphi_{AB}, \varphi_{AC}, \varphi_{AD}\).
+A major finding in this paper is the identification of **phase polarization** in the Brillouin zone of PdSe₂. The electronic wavefunctions in PdSe₂ are fully polarized to one of four possible states: **000, 0ππ, π0π, ππ0**, depending on the relative quantum phases $ \varphi_{AB}, \varphi_{AC}, \varphi_{AD} $.
 
 - The **000 state** (blue pseudospin) is **visible** in ARPES under **p-polarized light**, because constructive interference ensures a non-zero matrix element.
-- The other states, **0ππ, π0π, and ππ0** (red, yellow, and green pseudospins), are **dark states** because two of the three quantum phases are \(\pi\), leading to **double destructive interference**. These states are completely undetectable by ARPES under **any light polarization**.
+- The other states, **0ππ, π0π, and ππ0** (red, yellow, and green pseudospins), are **dark states** because two of the three quantum phases are $ \pi $, leading to **double destructive interference**. These states are completely undetectable by ARPES under **any light polarization**.
 
 The phase polarization forms a **checkerboard pattern** in momentum space, where each region of the Brillouin zone is polarized to one of these four states. The **dark states** correspond to areas where double destructive interference occurs, making the electronic states invisible in ARPES measurements.
 
@@ -109,7 +109,7 @@ The paper also generalizes the findings on dark states to other material systems
     - For cuprates, the two nearly degenerate Fermi surfaces (FS1 and FS2) show that segments of the Fermi surface polarized to **000 states** are visible in ARPES with **p-polarized light**, while segments polarized to **0ππ states** are visible with **s-polarized light**.
     - However, parts of the Fermi surface polarized to **π0π** and **ππ0** remain undetectable due to dark states.
   
-- **Lead Halide Perovskites**: In **CsPbBr₃**, ARPES measurements show that two distinct valence bands (VB1 and VB2) are observed depending on the photon energy used (kz = \(\Gamma_7\) for VB1, kz = \(\Gamma_8\) for VB2). However, only specific bands appear under **p-polarized light**, and both bands vanish under **s-polarized light**. This behavior is explained as a result of **dark states** in the perovskite's sublattice structure.
+- **Lead Halide Perovskites**: In **CsPbBr₃**, ARPES measurements show that two distinct valence bands (VB1 and VB2) are observed depending on the photon energy used (kz = $ \Gamma_7 $ for VB1, kz = $ \Gamma_8 $ for VB2). However, only specific bands appear under **p-polarized light**, and both bands vanish under **s-polarized light**. This behavior is explained as a result of **dark states** in the perovskite's sublattice structure.
 
 These findings demonstrate that the phenomenon of **dark states** is not limited to PdSe₂ but is a **universal feature** in materials with two pairs of sublattices connected by **glide-mirror symmetries**.
 
@@ -152,3 +152,4 @@ In summary, the discovery of condensed-matter dark states, the detailed analysis
 - **p-polarized light**: Light whose electric field oscillates parallel to the plane of incidence, often used to detect quantum states in ARPES.
 - **s-polarized light**: Light whose electric field oscillates perpendicular to the plane of incidence, which can cause destructive interference in certain quantum states.
 - **Fermi’s Golden Rule**: A quantum mechanical formula used to calculate the transition probability of electrons between states when interacting with light.
+
