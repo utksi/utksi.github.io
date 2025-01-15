@@ -7,6 +7,7 @@ tags: physics spectroscopy materials-science
 categories: journal-club
 giscus_comments: true
 related_posts: false
+toc: true
 ---
 
 - A slightly different way of looking at dark bands in the BZ. See [Chung et al](https://doi.org/10.1038/s41567-024-02586-x)
