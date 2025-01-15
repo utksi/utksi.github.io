@@ -88,7 +88,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Worklog # blog_name will be displayed in your blog page
-blog_description: This is where thoughts and prayers are compiled
+blog_description: This is where my thoughts and prayers are compiled
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
