@@ -20,4 +20,4 @@ social: true # includes social icons at the bottom of the page
 
 Hi! I'm Utkarsh. I work on first priniciples simulations of functional materials.
 
-Here's my github [github](https://fontawesome.com/) and [University page](https://liu.se/en/employee/utksi60). 
+Here's my github [github](https://github.com/utksi) and [University page](https://liu.se/en/employee/utksi60). 
