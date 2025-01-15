@@ -9,8 +9,8 @@ profile:
   image: #prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 G406, Fysikhuset</p>
-    <p>123 IFM, Linköpings Universitet</p>
+    <p>G406, Fysikhuset</p>
+    <p>IFM, Linköpings Universitet</p>
     <p>Linköping, Sweden 58326</p>
 
 news: false # includes a list of news items
