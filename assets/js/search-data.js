@@ -9,7 +9,7 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },// somehow this doesn't exclude nav: false pages{id: "nav-blog",
+  },{id: "nav-blog",
           title: "blog",
           description: "",
           section: "Navigation",
