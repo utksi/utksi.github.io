@@ -68,8 +68,7 @@ Given $$n(\mathbf{r})$$: the electron density.
 
 If you're reading this, then it's highly likely that you already know that ELF fields can be written very easily after a obtaining charge density in VASP/CASTEP.
 
-And,
-In CASTEP and VASP, the ELF is calculated using an expression involving the Laplacian of the Kohn-Sham orbitals and electron density:
+And, in CASTEP and VASP, the ELF is calculated using an expression involving the Laplacian of the Kohn-Sham orbitals and electron density:
 
 $$
 D(\mathbf{r}) = -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) + \dfrac{A}{2} \nabla^2 n(\mathbf{r}) - \dfrac{A}{4n(\mathbf{r})} \left( \nabla n(\mathbf{r}) \right)^2
@@ -115,7 +114,7 @@ $$
 -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2 - 2A \sum_i \nabla \cdot \left( \psi_i^*(\mathbf{r}) \nabla \psi_i(\mathbf{r}) \right)
 $$
 
-Recognizing that $$A = \dfrac{\hbar^2}{2m}$, the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ corresponds to twice the total kinetic energy density:
+Recognizing that $$A = \dfrac{\hbar^2}{2m}$$, the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ is twice the total kinetic energy density:
 
 $$
 2 t(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2
@@ -163,7 +162,7 @@ $$
 
 #### **Equivalence**
 
-- The CASTEP/VASP expression for $D(\mathbf{r})$ essentially represents twice the Pauli kinetic energy density $2 t_P(\mathbf{r})$, up to divergence terms.
+- The CASTEP/VASP expression for $$D(\mathbf{r})$$ essentially represents twice the Pauli kinetic energy density $$2 t_P(\mathbf{r})$$, up to divergence terms.
 - The divergence terms may cancel out or integrate to zero under appropriate boundary conditions but can be significant locally.
 
 ---
