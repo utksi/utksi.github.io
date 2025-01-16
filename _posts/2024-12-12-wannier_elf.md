@@ -18,6 +18,8 @@ toc:
 - In the event reading the following is not really needed, the implementation is available here:
   [Wannier-ELF](https://github.com/utksi/wannier_elf)
 
+---
+
 ### **What, and Why?**
 
 The Electron Localization Function (ELF) is a valuable tool in computational chemistry and condensed matter physics for visualizing and understanding electron localization in atoms, molecules, and solids.
@@ -36,7 +38,7 @@ $$
 - $$t_W(\mathbf{r})$$: von Weizsäcker kinetic energy density.
 - $$t_h(\mathbf{r})$$: Kinetic energy density of a homogeneous electron gas.
 
-Essentially, it is a three-dimensional scalar field that **tracks the variation in KE density** (Total - Von-Weizsäcker term) at some point $$\mathbf{\vec{r}}$$ in the cell, compared to if one had a homogeneous electron gas with the same electron density. (for which the gradient term: $$|\nabla n(\mathbf{r})|$$ should be exactly zero.)
+Essentially, it is a three-dimensional scalar field that **tracks the variation in KE density** (Total - Von-Weizsäcker term) at some point $$\mathbf{\vec{r}}$$ in the cell, compared to if one had a homogeneous electron gas with the same electron density, for which the gradient term: $$\nabla n(\mathbf{r})$$ should be exactly zero.
 
 This ratio: $$\dfrac{ t_P(\mathbf{r}) }{ t_h(\mathbf{r}) }$$ is also sometimes called the **localization index** : $$\chi (r)$$.
 
@@ -59,6 +61,8 @@ Given $$n(\mathbf{r})$$: the electron density.
  $$
  t_h(\mathbf{r}) = \dfrac{3}{5} (3\pi^2)^{2/3} [n(\mathbf{r})]^{5/3}
  $$
+
+---
 
 ### VASP/CASTEP expressions for ELF
 
@@ -111,7 +115,7 @@ $$
 -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2 - 2A \sum_i \nabla \cdot \left( \psi_i^*(\mathbf{r}) \nabla \psi_i(\mathbf{r}) \right)
 $$
 
-Recognizing that $A = \dfrac{\hbar^2}{2m}$, the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ corresponds to twice the total kinetic energy density:
+Recognizing that $$A = \dfrac{\hbar^2}{2m}$, the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ corresponds to twice the total kinetic energy density:
 
 $$
 2 t(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2
@@ -511,7 +515,7 @@ def validate_symmetry(self, field: np.ndarray, label: str) -> None:
         max_violation = max(max_violation, max_diff)
 ```
 
-**AND**
+**AND** validating the fields were symmetrized correctly
 
 ```python
 def validate_field_properties(
@@ -570,7 +574,7 @@ def validate_field_properties(
 
 ---
 
-### Calculating $$ELF(r)$$
+### Calculating $$\mathrm{ELF(r)}$$
 
 Finally, calculating ELF, which is straightforward:
 
@@ -608,7 +612,7 @@ Using a `threshold`, masking values with `mask` seems to be important for stable
 
 ---
 
-### Writing scalar fields $$F(r)$$
+### Writing scalar fields
 
 ```python
 self.write_field_xsf("density.xsf", density)
@@ -641,7 +645,7 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
 A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not +3 formal oxidation state. So the $$ELF(r)$$ field value near Cerium across all cross sections should be minimal.
 
 <div class="l-page">
-<iframe src="{{'/assets/plotly/elf_plot.html' | relative_url}}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+<iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="100%" width="75%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ---
