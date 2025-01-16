@@ -7,7 +7,7 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [
   {%- for page in site.pages -%}
-    {%- if page.permalink == '/' -%}{%- assign about_title = page.title | strip -%}{%- endif -%}
+    {%- if page.permalink == '/' and page.nav != false -%}{%- assign about_title = page.title | strip -%}{%- endif -%}
   {%- endfor -%}
   {
     id: "nav-{{ about_title | slugify }}",
@@ -20,7 +20,8 @@ ninja.data = [
   {%- assign sorted_pages = site.pages | where:"nav",true | sort: "nav_order" -%}
 // somehow this doesn't exclude nav: false pages {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
   {%- for p in sorted_pages -%}
-    {%- if p.nav and p.autogen == null -%}
+    {%- if p.autogen == null -%}  
+    // since p.nav filter is already fulfilled with the 'where' conditions {%- if p.nav and p.autogen == null -%}
       {%- if p.dropdown -%}
         {%- for child in p.children -%}
           {%- unless child.title == 'divider' -%}
