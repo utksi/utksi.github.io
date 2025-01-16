@@ -1,6 +1,6 @@
 # :house_with_garden:
 
-This is the main repository for my public [website](utkarsh.science)!
+This is the main repository for my public [website](https://utkarsh.science)!
 
 # :balance_scale: License
 
