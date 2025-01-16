@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ELF with wannier functions"
+title: "ELF, with wannier functions"
 date: 2024-12-12 02:14
 description: "A worklog implementing calculation of Electron Localization Function (ELF) with wannier functions."
 tags: wannier DFT ELF physics
