@@ -18,10 +18,8 @@ ninja.data = [
     },
   },
   {%- assign sorted_pages = site.pages | where:"nav",true | sort: "nav_order" -%}
-// somehow this doesn't exclude nav: false pages {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
   {%- for p in sorted_pages -%}
-    {%- if p.autogen == null -%}  
-    // since p.nav filter is already fulfilled with the 'where' conditions {%- if p.nav and p.autogen == null -%}
+    {%- if p.autogen == null -%}
       {%- if p.dropdown -%}
         {%- for child in p.children -%}
           {%- unless child.title == 'divider' -%}
