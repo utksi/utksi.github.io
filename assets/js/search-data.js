@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "post-stuff-i-read-dark-states-of-electrons-in-a-quantum-system-with-two-pairs-of-sublattices",
+        },{id: "post-elf-with-wannier-functions",
+      
+        title: "ELF with wannier functions",
+      
+      description: "A worklog implementing calculation of Electron Localization Function (ELF) with wannier functions.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/wannier_elf/";
+        
+      },
+    },{id: "post-stuff-i-read-dark-states-of-electrons-in-a-quantum-system-with-two-pairs-of-sublattices",
       
         title: "[Stuff I read] Dark states of electrons in a quantum system with two...",
       
