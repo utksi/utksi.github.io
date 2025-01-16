@@ -162,6 +162,8 @@ $$
 - The CASTEP/VASP expression for $D(\mathbf{r})$ essentially represents twice the Pauli kinetic energy density $2 t_P(\mathbf{r})$, up to divergence terms.
 - The divergence terms may cancel out or integrate to zero under appropriate boundary conditions but can be significant locally.
 
+---
+
 ### Scalar fields with Wannier functions
 
 The first step would be to recognize that we're working with *Maximally localized* wannier functions. As as result, the phase is consistent.
@@ -177,6 +179,8 @@ $$
 And, calculate the kinetic energy density terms in the same way.
 
 Note that, at the end, we need $$D_h(r)$$ and $$D(r) = \tau - \tau_w(r)$$.
+
+---
 
 ### Density and density-gradient from $$w_n(r)$$
 
@@ -210,6 +214,8 @@ for i, wf in enumerate(self.wannier_data):
 # Double density for non-spin-polarized system
 density *= 2.0
 ```
+
+---
 
 ### Symmetrization of scalar fields $$F(r)$$
 
@@ -562,6 +568,8 @@ def validate_field_properties(
             )
 ```
 
+---
+
 ### Calculating $$ELF(r)$$
 
 Finally, calculating ELF, which is straightforward:
@@ -598,6 +606,8 @@ elf[mask] = 1.0 / (1.0 + chi[mask] ** 2)
 
 Using a `threshold`, masking values with `mask` seems to be important for stable values.
 
+---
+
 ### Writing scalar fields $$F(r)$$
 
 ```python
@@ -624,19 +634,25 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
     )
 ```
 
+---
+
 ### ELF obtained from $$w_n(r)$$
 
 A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not +3 formal oxidation state. So the $$ELF(r)$$ field value near Cerium across all cross sections should be minimal.
 
 <div class="l-page">
-<iframe src="{{'/assets/plotly/elf_plot.html' | relative_url}}" frameborder='0' scrolling='no' height="50%" width="30%" style="border: 1px dashed grey;"></iframe>
+<iframe src="{{'/assets/plotly/elf_plot.html' | relative_url}}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
+
+---
 
 ### **Conclusion**
 
 Calculating the Electron Localization Function (ELF) using Wannier functions provides a localized perspective on electron localization, anc can potentially offer new insights into chemical bonding and electron pairing.
 Normalization, phase alignment, and inclusion of cross terms need to be carefully addressed.
 .. *Ongoing* ...
+
+---
 
 ### **References**
 
