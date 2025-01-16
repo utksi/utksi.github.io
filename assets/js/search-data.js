@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "post-elf-with-wannier-functions",
       
-        title: "ELF with wannier functions",
+        title: "ELF, with wannier functions",
       
       description: "A worklog implementing calculation of Electron Localization Function (ELF) with wannier functions.",
       section: "Posts",
