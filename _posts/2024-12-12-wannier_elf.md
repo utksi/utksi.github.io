@@ -189,7 +189,7 @@ Note that, at the end, we need $$D_h(r)$$ and $$D(r) = \tau - \tau_w(r)$$.
 
 In terms of implementation, the electron density and its gradient can be constructed as:
 
-```python
+{% highlight python %}
 # Process the wannier function.
 for i, wf in enumerate(self.wannier_data):
     self.logger.info(
@@ -216,7 +216,7 @@ for i, wf in enumerate(self.wannier_data):
 
 # Double density for non-spin-polarized system
 density *= 2.0
-```
+{% endhighlight %}
 
 ---
 
