@@ -645,7 +645,7 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
 A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not +3 formal oxidation state. So the $$ELF(r)$$ field value near Cerium across all cross sections should be minimal.
 
 <div class="l-page">
-<iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="800px" width="100%" style="border: 1px dashed grey;"></iframe>
+<iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="700px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ---
