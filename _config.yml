@@ -16,7 +16,7 @@ footer_text: >
 #  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: physics, preovskite, optical, MLP, neural-network, NN, DFT, ab-initio # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: absorption.png # ⚛️ # 1s¹ # 🌌 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: absorption2.png # ⚛️ # 1s¹ # 🌌 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://utksi.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
