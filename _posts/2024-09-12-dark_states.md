@@ -8,7 +8,7 @@ categories: stuff-i-read
 giscus_comments: false
 related_posts: false
 toc:
-  sidebar: right
+  sidebar: left
 ---
 
 - A slightly different way of looking at dark bands in the BZ. See [Chung et al](https://doi.org/10.1038/s41567-024-02586-x)
