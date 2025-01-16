@@ -114,7 +114,7 @@ $$
 -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2 - 2A \sum_i \nabla \cdot \left( \psi_i^*(\mathbf{r}) \nabla \psi_i(\mathbf{r}) \right)
 $$
 
-Recognizing that the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ is twice the total kinetic energy density:
+Recognizing that the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ is twice the total kinetic energy density,
 
 $$
 2 t(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2
