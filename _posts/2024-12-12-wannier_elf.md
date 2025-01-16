@@ -86,11 +86,11 @@ $$
 \text{ELF}(\mathbf{r}) = \dfrac{1}{1 + \left( \dfrac{ D(\mathbf{r}) }{ D_0(\mathbf{r}) } \right)^2}
 $$
 
-In the $$\texttt{VASP}$$ source code, $$D(r) = T + T_{corr.} - T_{bos.}$$ could be found, i.e. the same thing.
+In the $$\texttt{VASP}$$ source code, $$D = T + T_{corr.} - T_{bos.}$$ could be found, which is the same thing.
 
 The numerator in the localization index now looks a bit different here, and the first guess should be that this of course looks like this because the normal expression has been broken down into direct, cross and divergence terms - and one would be correct!
 
-I still find it a tiny bit cathartic to show this explicitly (doing my part against the entropy of the universe).
+I still find it a tiny bit cathartic to show this explicitly (doing my part against entropy).
 
 #### **Reconciling the Expressions**
 
