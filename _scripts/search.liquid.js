@@ -17,7 +17,8 @@ ninja.data = [
       window.location.href = "{{ '/' | relative_url }}";
     },
   },
-  {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
+  {%- assign sorted_pages = site.pages | where:"nav",true | sort: "nav_order" -%}
+// somehow this doesn't exclude nav: false pages {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
   {%- for p in sorted_pages -%}
     {%- if p.nav and p.autogen == null -%}
       {%- if p.dropdown -%}
