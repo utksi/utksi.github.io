@@ -44,19 +44,19 @@ This ratio: $$\dfrac{ t_P(\mathbf{r}) }{ t_h(\mathbf{r}) }$$ is also sometimes c
 
 Given $$n(\mathbf{r})$$: the electron density.
 
-1. **von Weizsäcker Kinetic Energy Density ($t_W(\mathbf{r})$)**
+1. **von Weizsäcker Kinetic Energy Density ($$t_W(\mathbf{r})$$)**
 
  $$
  t_W(\mathbf{r}) = \dfrac{1}{8} \dfrac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}
  $$
 
-2. **Pauli Kinetic Energy Density ($t_P(\mathbf{r})$)**
+2. **Pauli Kinetic Energy Density ($$t_P(\mathbf{r})$$)**
 
  $$
  t_P(\mathbf{r}) = t(\mathbf{r}) - t_W(\mathbf{r})
  $$
 
-3. **Homogeneous Electron Gas Kinetic Energy Density ($t_h(\mathbf{r})$)**
+3. **Homogeneous Electron Gas Kinetic Energy Density ($$t_h(\mathbf{r})$$)**
 
  $$
  t_h(\mathbf{r}) = \dfrac{3}{5} (3\pi^2)^{2/3} [n(\mathbf{r})]^{5/3}
@@ -74,7 +74,7 @@ $$
 D(\mathbf{r}) = -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) + \dfrac{A}{2} \nabla^2 n(\mathbf{r}) - \dfrac{A}{4n(\mathbf{r})} \left( \nabla n(\mathbf{r}) \right)^2
 $$
 
-- $$A = \dfrac{\hbar^2}{2m}$$: Constant involving Planck's constant $$\hbar$$ and electron mass $m$.
+- $$A = \dfrac{\hbar^2}{2m}$$: Constant involving Planck's constant $$\hbar$$ and electron mass $$m$$.
 - The terms represent:
   - **First Term**: Kinetic energy density of the non-interacting Kohn-Sham system.
   - **Second Term**: "Correlation correction."
@@ -114,7 +114,7 @@ $$
 -2A \sum_i \psi_i^*(\mathbf{r}) \nabla^2 \psi_i(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2 - 2A \sum_i \nabla \cdot \left( \psi_i^*(\mathbf{r}) \nabla \psi_i(\mathbf{r}) \right)
 $$
 
-Recognizing that $$A = \dfrac{\hbar^2}{2m}$$, the term $$2A \sum_i |\nabla \psi_i(\mathbf{r})|^2$$ is twice the total kinetic energy density:
+Recognizing that the term $$2A \Sigma_i |\nabla \psi_i(\mathbf{r})|^2$$ is twice the total kinetic energy density:
 
 $$
 2 t(\mathbf{r}) = 2A \sum_i |\nabla \psi_i(\mathbf{r})|^2
