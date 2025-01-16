@@ -13,7 +13,7 @@ toc:
 
 - This is not complete - in the sense that it is something, but no one yet knows if it is useful to have.
 
-- For a primer on wannier functions: please see [this](https://doi.org/10.1103/RevModPhys.96.045008).
+- For a primer on wannier functions: please see [this](https://arxiv.org/abs/2312.10769).
 
 - In the event reading the following is not really needed, the implementation is available here:
   [Wannier-ELF](https://github.com/utksi/wannier_elf)
@@ -645,7 +645,7 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
 A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not +3 formal oxidation state. So the $$ELF(r)$$ field value near Cerium across all cross sections should be minimal.
 
 <div class="l-page">
-<iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="100%" width="75%" style="border: 1px dashed grey;"></iframe>
+<iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="800px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ---
