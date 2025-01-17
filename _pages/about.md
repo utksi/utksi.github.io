@@ -11,7 +11,7 @@ profile:
   more_info: >
     <p>G406, Fysikhuset</p>
     <p>IFM, Linköpings Universitet</p>
-    <p>Linköping, Sweden 58326</p>
+    <p>Linköping, Sweden 58330</p>
 
 news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
