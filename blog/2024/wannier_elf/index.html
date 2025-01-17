@@ -29,8 +29,8 @@
 26
 27
 28
-</pre></td> <td class="code"><pre><span class="c1"># Process the wannier function
-</span>
+</pre></td> <td class="code"><pre><span class="sh">"""</span><span class="s">Process the wannier function</span><span class="sh">"""</span>
+
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">wf</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">wannier_data</span><span class="p">):</span>
     <span class="n">self</span><span class="p">.</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
         <span class="sa">f</span><span class="sh">"</span><span class="s">Processing Wannier function </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">wannier_data</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span>
@@ -54,17 +54,17 @@
     <span class="c1"># Accumulate density gradient (e/Å⁴)
 </span>    <span class="n">grad_density</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">wf</span><span class="p">[...,</span> <span class="n">np</span><span class="p">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">grad_wf</span>
 
-<span class="c1"># Double density for non-spin-polarized system
-</span>
+<span class="sh">"""</span><span class="s">Double density for non-spin-polarized system</span><span class="sh">"""</span>
+
 <span class="n">density</span> <span class="o">*=</span> <span class="mf">2.0</span>
-</pre></td> </tr></tbody></table></code></pre></figure> <hr> <h3 id="symmetrization-of-scalar-fields">Symmetrization of scalar fields$$</h3> <p><strong>Strong</strong> emphasis needs to be laid on the importance of symmetrization of the charge density and kinetic energy scalar fields derived from wannier functions. Since the wannier functions are not <strong>symmetry-adapted</strong>, but <strong>maximally-localized</strong>, it matters quite a bit.</p> <blockquote class="block-tip"> <p><strong>Hint:</strong> Try to disable symmetrization in the code.</p> <p>See the <code class="language-plaintext highlighter-rouge">symmetrize_field()</code> method.</p> <p>Or, relax the constraints from <code class="language-plaintext highlighter-rouge">1e-5</code> to say, <code class="language-plaintext highlighter-rouge">1e-1</code>.</p> <p>And, see what happens!</p> </blockquote> <p>The following symmetrizations are therefore essential.</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr>
+</pre></td> </tr></tbody></table></code></pre></figure> <hr> <h3 id="symmetrization-of-scalar-fields">Symmetrization of scalar fields</h3> <p><strong>Strong</strong> emphasis needs to be laid on the importance of symmetrization of the charge density and kinetic energy scalar fields derived from wannier functions. Since the wannier functions are not <strong>symmetry-adapted</strong>, but <strong>maximally-localized</strong>, it matters quite a bit.</p> <blockquote class="block-tip"> <p><strong>Hint:</strong> Try to disable symmetrization in the code.</p> <p>See the <code class="language-plaintext highlighter-rouge">symmetrize_field()</code> method.</p> <p>Or, relax the constraints from <code class="language-plaintext highlighter-rouge">1e-5</code> to say, <code class="language-plaintext highlighter-rouge">1e-1</code>.</p> <p>And, see what happens!</p> </blockquote> <p>The following symmetrizations are therefore essential.</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr>
 <td class="gutter gl"><pre class="lineno">1
 2
 3
 4
 5
-</pre></td> <td class="code"><pre><span class="c1"># Symmetrize fields
-</span>
+</pre></td> <td class="code"><pre><span class="sh">"""</span><span class="s">Symmetrize fields</span><span class="sh">"""</span>
+
 <span class="n">density</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">symmetrize_field</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="sh">"</span><span class="s">density</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">tau</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">symmetrize_field</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="sh">"</span><span class="s">kinetic energy density</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">grad_density</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">symmetrize_field</span><span class="p">(</span><span class="n">grad_density</span><span class="p">,</span> <span class="sh">"</span><span class="s">density gradient</span><span class="sh">"</span><span class="p">)</span>
@@ -429,8 +429,8 @@
 3
 4
 5
-</pre></td> <td class="code"><pre><span class="c1"># Validate symmetry with spatial analysis
-</span>
+</pre></td> <td class="code"><pre><span class="sh">"""</span><span class="s">Validate symmetry with spatial analysis</span><span class="sh">"""</span>
+
 <span class="n">self</span><span class="p">.</span><span class="nf">validate_symmetry</span><span class="p">(</span><span class="n">density</span><span class="p">,</span> <span class="sh">"</span><span class="s">density</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">self</span><span class="p">.</span><span class="nf">validate_symmetry</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="sh">"</span><span class="s">kinetic energy density</span><span class="sh">"</span><span class="p">)</span>
 <span class="n">self</span><span class="p">.</span><span class="nf">validate_symmetry</span><span class="p">(</span><span class="n">grad_density</span><span class="p">,</span> <span class="sh">"</span><span class="s">density gradient</span><span class="sh">"</span><span class="p">)</span>
@@ -707,39 +707,39 @@
 36
 </pre></td> <td class="code"><pre><span class="n">self</span><span class="p">.</span><span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Computing ELF...</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="c1"># Apply density threshold to avoid numerical issues
-</span>
+<span class="sh">"""</span><span class="s">Apply density threshold to avoid numerical issues</span><span class="sh">"""</span>
+
 <span class="n">density_threshold</span> <span class="o">=</span> <span class="mf">1e-6</span>  <span class="c1"># e/Å³
 </span><span class="n">mask</span> <span class="o">=</span> <span class="n">density</span> <span class="o">&gt;</span> <span class="n">density_threshold</span>
 
-<span class="c1"># Calculate uniform electron gas kinetic energy density
-</span>
-<span class="c1"># Following VASP's approach with same prefactors
-</span>
+<span class="sh">"""</span><span class="s">Calculate uniform electron gas kinetic energy density</span><span class="sh">"""</span>
+
+<span class="sh">"""</span><span class="s">Following VASP</span><span class="sh">'</span><span class="s">s approach with same prefactors</span><span class="sh">"""</span>
+
 <span class="n">D_h</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros_like</span><span class="p">(</span><span class="n">density</span><span class="p">)</span>
 <span class="n">D_h</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">density</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">**</span> <span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span>
 
-<span class="c1"># Calculate Pauli kinetic energy term
-</span>
+<span class="sh">"""</span><span class="s">Calculate Pauli kinetic energy term</span><span class="sh">"""</span>
+
 <span class="n">grad_density_norm</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">grad_density</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">tau_w</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros_like</span><span class="p">(</span><span class="n">density</span><span class="p">)</span>
 <span class="n">tau_w</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">grad_density_norm</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mf">8.0</span> <span class="o">*</span> <span class="n">density</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
 
-<span class="c1"># Calculate D = τ - τ_w
-</span>
+<span class="sh">"""</span><span class="s">Calculate D = τ - τ_w</span><span class="sh">"""</span>
+
 <span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">maximum</span><span class="p">(</span><span class="n">tau</span> <span class="o">-</span> <span class="n">tau_w</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 
-<span class="c1"># Initialize ELF array (starting from 0.0, not 0.5)
-</span>
+<span class="sh">"""</span><span class="s">Initialize ELF array (starting from 0.0, not 0.5)</span><span class="sh">"""</span>
+
 <span class="n">elf</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros_like</span><span class="p">(</span><span class="n">density</span><span class="p">)</span>
 
-<span class="c1"># Compute dimensionless χ = D/D_h
-</span>
+<span class="sh">"""</span><span class="s">Compute dimensionless χ = D/D_h</span><span class="sh">"""</span>
+
 <span class="n">chi</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros_like</span><span class="p">(</span><span class="n">density</span><span class="p">)</span>
 <span class="n">chi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">/</span> <span class="n">D_h</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
 
-<span class="c1"># Compute ELF
-</span>
+<span class="sh">"""</span><span class="s">Compute ELF</span><span class="sh">"""</span>
+
 <span class="n">elf</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">chi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></td> </tr></tbody></table></code></pre></figure> <p>Using a <code class="language-plaintext highlighter-rouge">threshold</code>, masking values with <code class="language-plaintext highlighter-rouge">mask</code> seems to be important for stable values.</p> <hr> <h3 id="writing-scalar-fields">Writing scalar fields</h3> <figure class="highlight"><pre><code class="language-python" data-lang="python"><table class="rouge-table"><tbody><tr>
 <td class="gutter gl"><pre class="lineno">1
