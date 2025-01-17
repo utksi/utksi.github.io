@@ -1023,8 +1023,8 @@ figure.highlight {
       &.gutter {
         width: 50px;
         min-width: 50px;
-        background: rgba(0,0,0,0.04);
-        border-right: 1px solid rgba(0,0,0,0.05);
+        background: rgb(36, 27, 63);
+        border-right: 0.5px solid rgb(0, 0, 0);
         
         pre {
           margin: 0;
