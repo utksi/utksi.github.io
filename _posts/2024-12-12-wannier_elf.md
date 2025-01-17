@@ -243,7 +243,7 @@ The following symmetrizations are therefore essential.
 density = self.symmetrize_field(density, "density")
 tau = self.symmetrize_field(tau, "kinetic energy density")
 grad_density = self.symmetrize_field(grad_density, "density gradient")
-{% endhighlight % }
+{% endhighlight %}
 
 Here is the symmetrization utility, which can do this both in real and reciprocal space.
 `spglib` is used for detecting the lattice symmetry.
@@ -268,7 +268,7 @@ def symmetrize_field(self, field: np.ndarray, field_name: str) -> np.ndarray:
         return self._reciprocal_symmetrize(field, field_name)
     else:
         return self._real_symmetrize(field, field_name)
-{% endhighlight % }
+{% endhighlight %}
 
 If we select real space symmetrization:
 
@@ -352,7 +352,7 @@ def _real_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarray:
 
     self.logger.info(f"Completed real-space symmetrization of {field_name}")
     return sym_field
-{% endhighlight % }
+{% endhighlight %}
 
 If we select reciprocal space symmetrization:
 
@@ -438,7 +438,7 @@ def _reciprocal_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarr
 
     self.logger.info(f"Completed reciprocal-space symmetrization of {field_name}")
     return sym_field
-{% endhighlight % }
+{% endhighlight %}
 
 It should be made sure that the integral quantities are conserved before and after symmetrization, in addition to whether the scalar field obey ,symmetrization in different regions: `core`, `bonding`, `interstitial`, because even if the scalar field is sampled uniformly, the constituing wavefunctions/wannier-functions are most definitely not.
 
@@ -451,7 +451,7 @@ So,
 self.validate_symmetry(density, "density")
 self.validate_symmetry(tau, "kinetic energy density")
 self.validate_symmetry(grad_density, "density gradient")
-{% endhighlight % }
+{% endhighlight %}
 
 which calls upon the functions that validate symmetry and field properties
 
@@ -519,7 +519,7 @@ def validate_symmetry(self, field: np.ndarray, label: str) -> None:
         field_values = np.array(field_values)
         max_diff = np.max(np.ptp(field_values, axis=0))
         max_violation = max(max_violation, max_diff)
-{% endhighlight % }
+{% endhighlight %}
 
 **AND** validating the fields were symmetrized correctly
 
@@ -576,7 +576,7 @@ def validate_field_properties(
                 f"Total {field_name} conserved after symmetrization. "
                 f"Relative difference: {relative_diff:.2e}"
             )
-{% endhighlight % }
+{% endhighlight %}
 
 ---
 
@@ -621,7 +621,7 @@ chi[mask] = D[mask] / D_h[mask]
 # Compute ELF
 
 elf[mask] = 1.0 / (1.0 + chi[mask] ** 2)
-{% endhighlight % }
+{% endhighlight %}
 
 Using a `threshold`, masking values with `mask` seems to be important for stable values.
 
@@ -636,7 +636,7 @@ self.write_field_xsf("tau_w.xsf", tau_w)
 self.write_field_xsf("D_h.xsf", D_h)
 self.write_field_xsf("ELF.xsf", elf)
 
-{% endhighlight % }
+{% endhighlight %}
 
 We make use of ASE's write function:
 
@@ -652,7 +652,7 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
         origin=self.origin,
         span_vectors=self.span_vectors,
     )
-{% endhighlight % }
+{% endhighlight %}
 
 ---
 
