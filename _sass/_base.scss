@@ -1025,12 +1025,11 @@ figure.highlight {
       vertical-align: top;
 
       &.gutter {
-        /* The line-number column */
         width: 50px;
         min-width: 50px;
         max-width: 50px;
         background: rgba(0, 0, 0, 0.04);
-        border-right: 0.5px solid rgba(0, 0, 0, 0.15);
+        border-right: 0px solid rgba(0, 0, 0, 1.0);
 
         pre {
           margin: 0;
@@ -1038,40 +1037,37 @@ figure.highlight {
           text-align: right;
           color: rgba(0, 0, 0, 0.4);
           user-select: none;
-          /* Do NOT wrap line numbers: */
-          white-space: pre;
-          overflow: hidden;
+          white-space: pre;           // No wrapping for line numbers
+          overflow: hidden !important;
         }
       }
 
       &.code {
-        /* The actual code column */
         width: auto;
 
         pre {
           margin: 0;
           padding: 1rem;
-          /* Allow code lines to wrap: */
-          white-space: pre-wrap;
-          word-wrap: break-word;
-          overflow-wrap: break-word;
-          overflow: visible;
+          /* Force code to wrap */
+          white-space: pre-wrap !important;
+          word-wrap: break-word !important;
+          overflow-wrap: break-word !important;
+          overflow-x: visible !important;
         }
       }
     }
   }
 }
 
-/* For code blocks without line numbers, the 'highlight' rule can remain: */
-.highlight {
-  pre {
-    margin: 0;
-    padding: 10px;
-    /* Ensure wrapping here as well: */
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+/* For code blocks (without line numbers) that use .highlight > pre */
+.highlight > pre {
+  margin: 0;
+  padding: 10px;
+  /* Force wrapping here, too */
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  overflow-x: visible !important;
 }
 
 // Transitioning Themes
