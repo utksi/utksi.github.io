@@ -1014,28 +1014,38 @@ figure.highlight {
     margin: 0;
     border: none;
     width: 100%;
+    border-spacing: 0;
     
     td {
       padding: 0;
-    }
-    
-    pre {
-      margin: 0;
-      white-space: pre;
-    }
-    
-    .gutter {
-      width: 50px;
-      background: rgba(0,0,0,0.04);
-      border-right: 1px solid rgba(0,0,0,0.1);
-      color: rgba(0,0,0,0.4);
-      text-align: right;
-      padding-right: 10px;
-      user-select: none;
-    }
-    
-    .code {
-      padding-left: 10px;
+      border: none;
+
+      &.gutter {
+        width: 50px;
+        min-width: 50px;
+        background: rgba(0,0,0,0.04);
+        border-right: 1px solid rgba(0,0,0,0.1);
+        
+        pre {
+          margin: 0;
+          padding: 1rem;
+          text-align: right;
+          color: rgba(0,0,0,0.4);
+          user-select: none;
+          white-space: nowrap;
+        }
+      }
+      
+      &.code {
+        width: 100%;
+        
+        pre {
+          margin: 0;
+          padding: 1rem;
+          overflow-x: auto;
+          white-space: pre;
+        }
+      }
     }
   }
 }
