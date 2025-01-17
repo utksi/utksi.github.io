@@ -44,17 +44,17 @@ This ratio: $$\dfrac{ t_P(\mathbf{r}) }{ t_h(\mathbf{r}) }$$ is also sometimes c
 
 Given $$n(\mathbf{r})$$: the electron density.
 
-1. **von Weizsäcker Kinetic Energy Density ($$t_W(\mathbf{r})$$)**
+1. **von Weizsäcker Kinetic Energy Density:**
    $$
    t_W(\mathbf{r}) = \dfrac{1}{8} \dfrac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}
    $$
 
-2. **Pauli Kinetic Energy Density ($$t_P(\mathbf{r})$$)**
+2. **Pauli Kinetic Energy Density:**
    $$
    t_P(\mathbf{r}) = t(\mathbf{r}) - t_W(\mathbf{r})
    $$
 
-3. **Homogeneous Electron Gas Kinetic Energy Density ($$t_h(\mathbf{r})$$)**
+3. **Homogeneous Electron Gas Kinetic Energy Density:**
    $$
    t_h(\mathbf{r}) = \dfrac{3}{5} (3\pi^2)^{2/3} [n(\mathbf{r})]^{5/3}
    $$
@@ -187,7 +187,9 @@ Note that, at the end, we need $$D_h(r)$$ and $$D(r) = \tau - \tau_w(r)$$.
 In terms of implementation, the electron density and its gradient can be constructed as:
 
 {% highlight python %}
-# Process the wannier function.
+
+# Process the wannier function
+
 for i, wf in enumerate(self.wannier_data):
     self.logger.info(
         f"Processing Wannier function {i+1}/{len(self.wannier_data)}"
@@ -212,32 +214,36 @@ for i, wf in enumerate(self.wannier_data):
     grad_density += 2 * wf[..., np.newaxis] * grad_wf
 
 # Double density for non-spin-polarized system
+
 density *= 2.0
 {% endhighlight %}
 
 ---
 
-### Symmetrization of scalar fields $$F(r)$$
+### Symmetrization of scalar fields$$
 
 **Strong** emphasis needs to be laid on the importance of symmetrization of the charge density and kinetic energy scalar fields derived from wannier functions.
 Since the wannier functions are not **symmetry-adapted**, but **maximally-localized**, it matters quite a bit.
 
 {: .block-tip }
 > **Hint:** Try to disable symmetrization in the code.
-> Or, relax the constraints from 1e-5 to something higher; say, 1e-1.
+>
+> Or, relax the constraints from 1e-5 to say, 1e-1.
+>
 > And, see what happens!
-> 
-> See the`symmetrize_field()` method. 
-
+>
+> See the `symmetrize_field()` method.
 
 The following symmetrizations are therefore essential.
 
-```python
+{% highlight python linenos %}
+
 # Symmetrize fields
+
 density = self.symmetrize_field(density, "density")
 tau = self.symmetrize_field(tau, "kinetic energy density")
 grad_density = self.symmetrize_field(grad_density, "density gradient")
-```
+{% endhighlight % }
 
 Here is the symmetrization utility, which can do this both in real and reciprocal space.
 `spglib` is used for detecting the lattice symmetry.
@@ -245,7 +251,7 @@ It should be obvious that unless one has really dense 3D-scalar fields, accurate
 
 Symmetrization method based on argument; default is `reciprocal`.
 
-```python
+{% highlight python linenos %}
 def symmetrize_field(self, field: np.ndarray, field_name: str) -> np.ndarray:
     """
     Symmetrize a field according to crystal symmetry.
@@ -262,11 +268,11 @@ def symmetrize_field(self, field: np.ndarray, field_name: str) -> np.ndarray:
         return self._reciprocal_symmetrize(field, field_name)
     else:
         return self._real_symmetrize(field, field_name)
-```
+{% endhighlight % }
 
 If we select real space symmetrization:
 
-```python
+{% highlight python linenos %}
 def _real_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarray:
     """
     Traditional symmetrization using averaging of symmetry-equivalent points in real space.
@@ -346,11 +352,11 @@ def _real_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarray:
 
     self.logger.info(f"Completed real-space symmetrization of {field_name}")
     return sym_field
-```
+{% endhighlight % }
 
 If we select reciprocal space symmetrization:
 
-```python
+{% highlight python linenos %}
 def _reciprocal_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarray:
     """
     Symmetrization in reciprocal space, similar to VASP's approach.
@@ -432,22 +438,24 @@ def _reciprocal_symmetrize(self, field: np.ndarray, field_name: str) -> np.ndarr
 
     self.logger.info(f"Completed reciprocal-space symmetrization of {field_name}")
     return sym_field
-```
+{% endhighlight % }
 
 It should be made sure that the integral quantities are conserved before and after symmetrization, in addition to whether the scalar field obey ,symmetrization in different regions: `core`, `bonding`, `interstitial`, because even if the scalar field is sampled uniformly, the constituing wavefunctions/wannier-functions are most definitely not.
 
 So,
 
-```python
+{% highlight python linenos %}
+
 # Validate symmetry with spatial analysis
+
 self.validate_symmetry(density, "density")
 self.validate_symmetry(tau, "kinetic energy density")
 self.validate_symmetry(grad_density, "density gradient")
-```
+{% endhighlight % }
 
 which calls upon the functions that validate symmetry and field properties
 
-```python
+{% highlight python linenos %}n
 def validate_symmetry(self, field: np.ndarray, label: str) -> None:
     """
     Check if field obeys crystal symmetry, with spatial analysis relative to atomic positions.
@@ -511,11 +519,11 @@ def validate_symmetry(self, field: np.ndarray, label: str) -> None:
         field_values = np.array(field_values)
         max_diff = np.max(np.ptp(field_values, axis=0))
         max_violation = max(max_violation, max_diff)
-```
+{% endhighlight % }
 
 **AND** validating the fields were symmetrized correctly
 
-```python
+{% highlight python linenos %}
 def validate_field_properties(
     self,
     field: np.ndarray,
@@ -568,7 +576,7 @@ def validate_field_properties(
                 f"Total {field_name} conserved after symmetrization. "
                 f"Relative difference: {relative_diff:.2e}"
             )
-```
+{% endhighlight % }
 
 ---
 
@@ -576,35 +584,44 @@ def validate_field_properties(
 
 Finally, calculating ELF, which is straightforward:
 
-```python
+{% highlight python linenos %}
 self.logger.info("Computing ELF...")
+
 # Apply density threshold to avoid numerical issues
+
 density_threshold = 1e-6  # e/Å³
 mask = density > density_threshold
 
 # Calculate uniform electron gas kinetic energy density
+
 # Following VASP's approach with same prefactors
+
 D_h = np.zeros_like(density)
 D_h[mask] = density[mask] ** (5.0 / 3.0)
 
 # Calculate Pauli kinetic energy term
+
 grad_density_norm = np.sum(grad_density**2, axis=-1)
 tau_w = np.zeros_like(density)
 tau_w[mask] = grad_density_norm[mask] / (8.0 * density[mask])
 
 # Calculate D = τ - τ_w
+
 D = np.maximum(tau - tau_w, 0.0)
 
 # Initialize ELF array (starting from 0.0, not 0.5)
+
 elf = np.zeros_like(density)
 
 # Compute dimensionless χ = D/D_h
+
 chi = np.zeros_like(density)
 chi[mask] = D[mask] / D_h[mask]
 
 # Compute ELF
+
 elf[mask] = 1.0 / (1.0 + chi[mask] ** 2)
-```
+{% endhighlight % }
 
 Using a `threshold`, masking values with `mask` seems to be important for stable values.
 
@@ -612,17 +629,18 @@ Using a `threshold`, masking values with `mask` seems to be important for stable
 
 ### Writing scalar fields
 
-```python
+{% highlight python linenos %}
 self.write_field_xsf("density.xsf", density)
 self.write_field_xsf("tau.xsf", tau)
 self.write_field_xsf("tau_w.xsf", tau_w)
 self.write_field_xsf("D_h.xsf", D_h)
 self.write_field_xsf("ELF.xsf", elf)
-```
+
+{% endhighlight % }
 
 We make use of ASE's write function:
 
-```python
+{% highlight python linenos %}
 def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
     """Write a field to an XSF file for visualization."""
     self.logger.info(f"Writing field to file: {filename}")
@@ -634,7 +652,7 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
         origin=self.origin,
         span_vectors=self.span_vectors,
     )
-```
+{% endhighlight % }
 
 ---
 

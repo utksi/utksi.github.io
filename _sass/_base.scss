@@ -874,7 +874,7 @@ footer.sticky-bottom {
 figure.highlight {
   margin: 0 0 1rem;
 }
-
+/*
 pre {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
@@ -887,6 +887,29 @@ pre {
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
+  }
+}
+*/
+
+pre {
+  color: var(--global-theme-color);
+  background-color: var(--global-code-bg-color);
+  border-radius: 6px;
+  padding: 6px 12px;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  overflow-wrap: break-word;   /* Modern browsers */
+  overflow-x: auto;           /* For compatibility */
+
+  pre,
+  code {
+    background-color: transparent;
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 

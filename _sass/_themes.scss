@@ -75,7 +75,6 @@
   }
 }
 
-/*
 html[data-theme="dark"] {
   --global-bg-color: #{$grey-color-dark};
   --global-code-bg-color: #{$code-bg-color-dark};
@@ -121,9 +120,8 @@ html[data-theme="dark"] {
     display: block;
   }
 }
-*/
 
-/* Catppuccin Mocha theme */
+/* Catppuccin Mocha theme 
 html[data-theme="dark"] {
   --global-bg-color: #1e1e2e;        // Mocha base
   --global-code-bg-color: #181825;    // Mocha mantle
@@ -164,6 +162,7 @@ html[data-theme="dark"] {
     display: block;
   }
 }
+*/
 
 html[data-theme-setting="dark"] {
   #light-toggle-system {
