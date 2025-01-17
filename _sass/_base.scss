@@ -1018,36 +1018,40 @@ figure.highlight {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    
+
     td {
       padding: 0;
       border: none;
       vertical-align: top;
 
       &.gutter {
+        /* The line-number column */
         width: 50px;
         min-width: 50px;
         max-width: 50px;
-        background: rgba(0,0,0,0.04);
-        border-right: 1px solid rgba(0,0,0,0.1);
-        
+        background: rgba(0, 0, 0, 0.04);
+        border-right: 0.5px solid rgba(0, 0, 0, 0.15);
+
         pre {
           margin: 0;
           padding: 1rem;
           text-align: right;
-          color: rgba(0,0,0,0.4);
+          color: rgba(0, 0, 0, 0.4);
           user-select: none;
+          /* Do NOT wrap line numbers: */
           white-space: pre;
           overflow: hidden;
         }
       }
-      
+
       &.code {
+        /* The actual code column */
         width: auto;
-        
+
         pre {
           margin: 0;
           padding: 1rem;
+          /* Allow code lines to wrap: */
           white-space: pre-wrap;
           word-wrap: break-word;
           overflow-wrap: break-word;
@@ -1056,43 +1060,14 @@ figure.highlight {
       }
     }
   }
-
-  // Ensure code lines align with line numbers
-  .gl {
-    white-space: pre;
-    width: 50px;
-    min-width: 50px;
-    padding-right: 10px;
-  }
 }
 
-pre {
-  color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 6px;
-  padding: 6px 12px;
-
-  pre,
-  code {
-    background-color: transparent;
-    border-radius: 0;
-    margin-bottom: 0;
-    padding: 0;
-  }
-}
-
-code {
-  color: var(--global-theme-color);
-  background-color: var(--global-code-bg-color);
-  border-radius: 3px;
-  padding: 3px 3px;
-}
-
-// For code blocks without line numbers
+/* For code blocks without line numbers, the 'highlight' rule can remain: */
 .highlight {
   pre {
     margin: 0;
     padding: 10px;
+    /* Ensure wrapping here as well: */
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;

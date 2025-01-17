@@ -455,7 +455,7 @@ self.validate_symmetry(grad_density, "density gradient")
 
 which calls upon the functions that validate symmetry and field properties
 
-{% highlight python linenos %}n
+{% highlight python linenos %}
 def validate_symmetry(self, field: np.ndarray, label: str) -> None:
     """
     Check if field obeys crystal symmetry, with spatial analysis relative to atomic positions.
