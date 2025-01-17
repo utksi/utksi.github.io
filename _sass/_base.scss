@@ -973,7 +973,6 @@ footer.sticky-bottom {
   }
 }
 
-/*
 // Rouge Color Customization
 figure.highlight {
   margin: 0 0 1rem;
@@ -1000,75 +999,7 @@ code {
   border-radius: 3px;
   padding: 3px 3px;
 }
-*/
 
-// Rouge Color Customization
-figure.highlight {
-  margin: 0 0 1rem;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--global-code-bg-color);
-
-  table {
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-
-    td {
-      padding: 0;
-      border: none;
-      vertical-align: top;
-
-      &.gutter {
-        width: 50px;
-        min-width: 50px;
-        max-width: 50px;
-        background: rgba(0, 0, 0, 0.04);
-        border-right: 0px solid rgba(0, 0, 0, 1.0);
-
-        pre {
-          margin: 0;
-          padding: 1rem;
-          text-align: right;
-          color: rgba(0, 0, 0, 0.4);
-          user-select: none;
-          white-space: pre;           // No wrapping for line numbers
-          overflow: hidden !important;
-        }
-      }
-
-      &.code {
-        width: auto;
-
-        pre {
-          margin: 0;
-          padding: 1rem;
-          /* Force code to wrap */
-          white-space: pre-wrap !important;
-          word-wrap: break-word !important;
-          overflow-wrap: break-word !important;
-          overflow-x: visible !important;
-        }
-      }
-    }
-  }
-}
-
-/* For code blocks (without line numbers) that use .highlight > pre */
-.highlight > pre {
-  margin: 0;
-  padding: 10px;
-  /* Force wrapping here, too */
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
-  overflow-wrap: break-word !important;
-  overflow-x: visible !important;
-}
 
 // Transitioning Themes
 html.transition,
