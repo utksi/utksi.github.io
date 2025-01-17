@@ -1007,29 +1007,36 @@ figure.highlight {
   margin: 0 0 1rem;
   width: 100%;
   max-width: 100%;
-  
-  pre {
-    white-space: pre;
-    overflow-x: auto;
-    overflow-y: hidden;
-    tab-size: 2;
-    -moz-tab-size: 2;
-    display: flex;
-  }
-  
-  code {
-    flex: 1;
-    min-width: 100%;
-    padding: 1rem !important;
-  }
-  
-  // Line number styling
-  .gutter {
-    padding: 1rem 0.5rem;
-    border-right: 1px solid rgba(0,0,0,0.1);
-    background: rgba(0,0,0,0.04);
-    color: rgba(0,0,0,0.4);
-    user-select: none;
+  border-radius: 6px;
+  overflow: hidden;
+
+  table {
+    margin: 0;
+    border: none;
+    width: 100%;
+    
+    td {
+      padding: 0;
+    }
+    
+    pre {
+      margin: 0;
+      white-space: pre;
+    }
+    
+    .gutter {
+      width: 50px;
+      background: rgba(0,0,0,0.04);
+      border-right: 1px solid rgba(0,0,0,0.1);
+      color: rgba(0,0,0,0.4);
+      text-align: right;
+      padding-right: 10px;
+      user-select: none;
+    }
+    
+    .code {
+      padding-left: 10px;
+    }
   }
 }
 
@@ -1039,7 +1046,7 @@ pre {
   border-radius: 6px;
   padding: 6px 12px;
   overflow-x: auto;
-  
+
   pre,
   code {
     background-color: transparent;
@@ -1059,9 +1066,8 @@ code {
 // For code blocks without line numbers
 .highlight {
   pre {
-    white-space: pre;
-    overflow-x: auto;
-    word-wrap: normal;
+    margin: 0;
+    padding: 10px;
   }
 }
 

@@ -188,7 +188,7 @@ In terms of implementation, the electron density and its gradient can be constru
 
 {% highlight python linenos %}
 
-# Process the wannier function
+"""Process the wannier function"""
 
 for i, wf in enumerate(self.wannier_data):
     self.logger.info(
@@ -213,14 +213,14 @@ for i, wf in enumerate(self.wannier_data):
     # Accumulate density gradient (e/Å⁴)
     grad_density += 2 * wf[..., np.newaxis] * grad_wf
 
-# Double density for non-spin-polarized system
+"""Double density for non-spin-polarized system"""
 
 density *= 2.0
 {% endhighlight %}
 
 ---
 
-### Symmetrization of scalar fields$$
+### Symmetrization of scalar fields
 
 **Strong** emphasis needs to be laid on the importance of symmetrization of the charge density and kinetic energy scalar fields derived from wannier functions.
 Since the wannier functions are not **symmetry-adapted**, but **maximally-localized**, it matters quite a bit.
@@ -238,7 +238,7 @@ The following symmetrizations are therefore essential.
 
 {% highlight python linenos %}
 
-# Symmetrize fields
+"""Symmetrize fields"""
 
 density = self.symmetrize_field(density, "density")
 tau = self.symmetrize_field(tau, "kinetic energy density")
@@ -446,7 +446,7 @@ So,
 
 {% highlight python linenos %}
 
-# Validate symmetry with spatial analysis
+"""Validate symmetry with spatial analysis"""
 
 self.validate_symmetry(density, "density")
 self.validate_symmetry(tau, "kinetic energy density")
@@ -587,38 +587,38 @@ Finally, calculating ELF, which is straightforward:
 {% highlight python linenos %}
 self.logger.info("Computing ELF...")
 
-# Apply density threshold to avoid numerical issues
+"""Apply density threshold to avoid numerical issues"""
 
 density_threshold = 1e-6  # e/Å³
 mask = density > density_threshold
 
-# Calculate uniform electron gas kinetic energy density
+"""Calculate uniform electron gas kinetic energy density"""
 
-# Following VASP's approach with same prefactors
+"""Following VASP's approach with same prefactors"""
 
 D_h = np.zeros_like(density)
 D_h[mask] = density[mask] ** (5.0 / 3.0)
 
-# Calculate Pauli kinetic energy term
+"""Calculate Pauli kinetic energy term"""
 
 grad_density_norm = np.sum(grad_density**2, axis=-1)
 tau_w = np.zeros_like(density)
 tau_w[mask] = grad_density_norm[mask] / (8.0 * density[mask])
 
-# Calculate D = τ - τ_w
+"""Calculate D = τ - τ_w"""
 
 D = np.maximum(tau - tau_w, 0.0)
 
-# Initialize ELF array (starting from 0.0, not 0.5)
+"""Initialize ELF array (starting from 0.0, not 0.5)"""
 
 elf = np.zeros_like(density)
 
-# Compute dimensionless χ = D/D_h
+"""Compute dimensionless χ = D/D_h"""
 
 chi = np.zeros_like(density)
 chi[mask] = D[mask] / D_h[mask]
 
-# Compute ELF
+"""Compute ELF"""
 
 elf[mask] = 1.0 / (1.0 + chi[mask] ** 2)
 {% endhighlight %}
@@ -660,7 +660,9 @@ def write_field_xsf(self, filename: str, field: np.ndarray) -> None:
 
 A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not +3 formal oxidation state. So the $$ELF(r)$$ field value near Cerium across all cross sections should be minimal.
 
+<!-- markdownlint-disable-next-line MD033 -->
 <div class="l-page">
+<!-- markdownlint-disable-next-line MD033 -->
 <iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="750px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
