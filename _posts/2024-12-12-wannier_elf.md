@@ -666,6 +666,9 @@ A good example is $$\mathrm{CeO_2}$$ where Cerium is supposed to have +4 and not
 <iframe src="/assets/plotly/elf_plot.html" frameborder='0' scrolling='no' height="750px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
+{: .block-info }
+> If the image is empty, move the sliders at the bottom of the frame.
+
 ---
 
 ### **Conclusion**

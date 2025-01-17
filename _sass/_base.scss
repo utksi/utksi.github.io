@@ -1009,22 +1009,27 @@ figure.highlight {
   max-width: 100%;
   border-radius: 6px;
   overflow: hidden;
+  background: var(--global-code-bg-color);
 
   table {
     margin: 0;
+    padding: 0;
     border: none;
     width: 100%;
     border-spacing: 0;
+    border-collapse: collapse;
     
     td {
       padding: 0;
       border: none;
+      vertical-align: top;
 
       &.gutter {
         width: 50px;
         min-width: 50px;
-        background: rgb(36, 27, 63);
-        border-right: 0.5px solid rgb(0, 0, 0);
+        max-width: 50px;
+        background: rgba(0,0,0,0.04);
+        border-right: 1px solid rgba(0,0,0,0.1);
         
         pre {
           margin: 0;
@@ -1032,23 +1037,32 @@ figure.highlight {
           text-align: right;
           color: rgba(0,0,0,0.4);
           user-select: none;
-          white-space: nowrap;
+          white-space: pre;
+          overflow: hidden;
         }
       }
       
       &.code {
-        width: 100%;
+        width: auto;
         
         pre {
           margin: 0;
           padding: 1rem;
-          overflow-x: auto;
-          white-space: pre-wrap;       /* Allow wrapping */
-          word-wrap: break-word;       /* Break long words if needed */
-          word-break: break-all;       /* Break words at any character */
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          overflow: visible;
         }
       }
     }
+  }
+
+  // Ensure code lines align with line numbers
+  .gl {
+    white-space: pre;
+    width: 50px;
+    min-width: 50px;
+    padding-right: 10px;
   }
 }
 
@@ -1057,7 +1071,6 @@ pre {
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
-  overflow-x: auto;
 
   pre,
   code {
@@ -1080,6 +1093,9 @@ code {
   pre {
     margin: 0;
     padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
