@@ -75,6 +75,7 @@
   }
 }
 
+/*
 html[data-theme="dark"] {
   --global-bg-color: #{$grey-color-dark};
   --global-code-bg-color: #{$code-bg-color-dark};
@@ -98,6 +99,49 @@ html[data-theme="dark"] {
   --global-back-to-top-text-color: #{$black-color};
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
+
+  --global-tip-block: #42b983;
+  --global-tip-block-bg: #e2f5ec;
+  --global-tip-block-text: #215d42;
+  --global-tip-block-title: #359469;
+  --global-warning-block: #e7c000;
+  --global-warning-block-bg: #fff8d8;
+  --global-warning-block-text: #6b5900;
+  --global-warning-block-title: #b29400;
+  --global-danger-block: #c00;
+  --global-danger-block-bg: #ffe0e0;
+  --global-danger-block-text: #600;
+  --global-danger-block-title: #c00;
+
+  .only-light {
+    display: none;
+  }
+
+  .only-dark {
+    display: block;
+  }
+}
+*/
+
+/* Catppuccin Mocha theme */
+html[data-theme="dark"] {
+  --global-bg-color: #1e1e2e;        // Mocha base
+  --global-code-bg-color: #181825;    // Mocha mantle
+  --global-text-color: #cdd6f4;       // Mocha text
+  --global-text-color-light: #a6adc8; // Mocha subtext0
+  --global-theme-color: #89b4fa;      // Mocha blue
+  --global-hover-color: #b4befe;      // Mocha lavender
+  --global-hover-text-color: #cdd6f4; // Mocha text
+  --global-footer-bg-color: #181825;  // Mocha mantle
+  --global-footer-text-color: #a6adc8; // Mocha subtext0
+  --global-footer-link-color: #89b4fa; // Mocha blue
+  --global-distill-app-color: #a6adc8; // Mocha subtext0
+  --global-divider-color: #313244;     // Mocha surface0
+  --global-card-bg-color: #181825;     // Mocha mantle
+  --global-back-to-top-bg-color: rgba(30, 30, 46, 0.5); // Mocha base with opacity
+  --global-back-to-top-text-color: #cdd6f4; // Mocha text
+  --global-newsletter-bg-color: #181825;     // Mocha mantle
+  --global-newsletter-text-color: #cdd6f4;   // Mocha text
 
   --global-tip-block: #42b983;
   --global-tip-block-bg: #e2f5ec;

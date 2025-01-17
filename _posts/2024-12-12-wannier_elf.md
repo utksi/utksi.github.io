@@ -45,22 +45,19 @@ This ratio: $$\dfrac{ t_P(\mathbf{r}) }{ t_h(\mathbf{r}) }$$ is also sometimes c
 Given $$n(\mathbf{r})$$: the electron density.
 
 1. **von Weizsäcker Kinetic Energy Density ($$t_W(\mathbf{r})$$)**
-
- $$
- t_W(\mathbf{r}) = \dfrac{1}{8} \dfrac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}
- $$
+   $$
+   t_W(\mathbf{r}) = \dfrac{1}{8} \dfrac{|\nabla n(\mathbf{r})|^2}{n(\mathbf{r})}
+   $$
 
 2. **Pauli Kinetic Energy Density ($$t_P(\mathbf{r})$$)**
-
- $$
- t_P(\mathbf{r}) = t(\mathbf{r}) - t_W(\mathbf{r})
- $$
+   $$
+   t_P(\mathbf{r}) = t(\mathbf{r}) - t_W(\mathbf{r})
+   $$
 
 3. **Homogeneous Electron Gas Kinetic Energy Density ($$t_h(\mathbf{r})$$)**
-
- $$
- t_h(\mathbf{r}) = \dfrac{3}{5} (3\pi^2)^{2/3} [n(\mathbf{r})]^{5/3}
- $$
+   $$
+   t_h(\mathbf{r}) = \dfrac{3}{5} (3\pi^2)^{2/3} [n(\mathbf{r})]^{5/3}
+   $$
 
 ---
 
@@ -225,11 +222,13 @@ density *= 2.0
 **Strong** emphasis needs to be laid on the importance of symmetrization of the charge density and kinetic energy scalar fields derived from wannier functions.
 Since the wannier functions are not **symmetry-adapted**, but **maximally-localized**, it matters quite a bit.
 
-```markdown
-Hint: Try to disable symmetrization in the code, or relax the constraints from 1e-5 to something higher; say, 1e-1; and see what happens.
+{: .block-tip }
+> **Hint:** Try to disable symmetrization in the code.
+> Or, relax the constraints from 1e-5 to something higher; say, 1e-1.
+> And, see what happens!
+> 
+> See the`symmetrize_field()` method. 
 
-See the `symmetrize_field()` function.
-```
 
 The following symmetrizations are therefore essential.
 
