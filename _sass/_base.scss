@@ -1007,22 +1007,29 @@ figure.highlight {
   margin: 0 0 1rem;
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
-
+  
   pre {
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    word-break: break-all !important;
+    white-space: pre;
     overflow-x: auto;
-    width: 100%;
-    max-width: 100%;
+    overflow-y: hidden;
+    tab-size: 2;
+    -moz-tab-size: 2;
+    display: flex;
   }
-
+  
   code {
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    word-break: break-all !important;
-    width: 100%;
+    flex: 1;
+    min-width: 100%;
+    padding: 1rem !important;
+  }
+  
+  // Line number styling
+  .gutter {
+    padding: 1rem 0.5rem;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.04);
+    color: rgba(0,0,0,0.4);
+    user-select: none;
   }
 }
 
@@ -1031,22 +1038,14 @@ pre {
   background-color: var(--global-code-bg-color);
   border-radius: 6px;
   padding: 6px 12px;
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
-  word-break: break-all !important;
-  width: 100%;
-  max-width: 100%;
   overflow-x: auto;
-
+  
   pre,
   code {
     background-color: transparent;
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    word-break: break-all !important;
   }
 }
 
@@ -1055,28 +1054,14 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
-  word-break: break-all !important;
 }
 
-// Add explicit container width control
-.highlighter-rouge {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-}
-
+// For code blocks without line numbers
 .highlight {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-
-  pre,
-  code {
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    word-break: break-all !important;
+  pre {
+    white-space: pre;
+    overflow-x: auto;
+    word-wrap: normal;
   }
 }
 
