@@ -892,10 +892,11 @@ pre {
 */
 
 pre {
-  color: var(--global-theme-color);
+  color: var(--global-text-color);
   background-color: var(--global-code-bg-color);
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 1em 0;
   white-space: pre-wrap;       /* Since CSS 2.1 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
   overflow-wrap: break-word;   /* Modern browsers */
