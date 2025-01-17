@@ -228,12 +228,9 @@ Since the wannier functions are not **symmetry-adapted**, but **maximally-locali
 {: .block-tip }
 > **Hint:** Try to disable symmetrization in the code.
 >
->
 > See the `symmetrize_field()` method.
 >
->
 > Or, relax the constraints from `1e-5` to say, `1e-1`.
->
 >
 > And, see what happens!
 
