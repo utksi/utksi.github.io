@@ -186,7 +186,7 @@ Note that, at the end, we need $$D_h(r)$$ and $$D(r) = \tau - \tau_w(r)$$.
 
 In terms of implementation, the electron density and its gradient can be constructed as:
 
-{% highlight python %}
+{% highlight python linenos %}
 
 # Process the wannier function
 
@@ -228,11 +228,14 @@ Since the wannier functions are not **symmetry-adapted**, but **maximally-locali
 {: .block-tip }
 > **Hint:** Try to disable symmetrization in the code.
 >
-> Or, relax the constraints from 1e-5 to say, 1e-1.
->
-> And, see what happens!
 >
 > See the `symmetrize_field()` method.
+>
+>
+> Or, relax the constraints from `1e-5` to say, `1e-1`.
+>
+>
+> And, see what happens!
 
 The following symmetrizations are therefore essential.
 
