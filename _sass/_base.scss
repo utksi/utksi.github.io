@@ -1024,7 +1024,7 @@ figure.highlight {
         width: 50px;
         min-width: 50px;
         background: rgba(0,0,0,0.04);
-        border-right: 1px solid rgba(0,0,0,0.1);
+        border-right: 1px solid rgba(0,0,0,0.05);
         
         pre {
           margin: 0;
@@ -1043,7 +1043,9 @@ figure.highlight {
           margin: 0;
           padding: 1rem;
           overflow-x: auto;
-          white-space: pre;
+          white-space: pre-wrap;       /* Allow wrapping */
+          word-wrap: break-word;       /* Break long words if needed */
+          word-break: break-all;       /* Break words at any character */
         }
       }
     }
