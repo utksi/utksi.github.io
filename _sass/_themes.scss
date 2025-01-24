@@ -91,9 +91,9 @@ html[data-theme="dark"] {
   --global-hover-text-color: #{$white-color};
 //  --global-footer-bg-color: #{$grey-color-light};
   --global-footer-bg-color: rgba(
-  #{color.channel($grey-color-light, "red", $space: rgb)},
-  #{color.channel($grey-color-light, "green", $space: rgb)},
-  #{color.channel($grey-color-light, "blue", $space: rgb)},
+  #{color.channel($grey-color-dark, "red", $space: rgb)},
+  #{color.channel($grey-color-dark, "green", $space: rgb)},
+  #{color.channel($grey-color-dark, "blue", $space: rgb)},
   0.6
   );
   --global-footer-text-color: #{$grey-color-dark};
