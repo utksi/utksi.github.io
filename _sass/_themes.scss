@@ -17,7 +17,7 @@
     #{color.channel($grey-color-dark, "red", $space: rgb)},
     #{color.channel($grey-color-dark, "green", $space: rgb)},
     #{color.channel($grey-color-dark, "blue", $space: rgb)},
-    0.9  // Adjust opacity (0-1)
+    0.7  // Adjust opacity (0-1)
   );
   --global-footer-text-color: #{$white-color};
   --global-footer-link-color: #{$white-color};
@@ -83,7 +83,7 @@
 
 html[data-theme="dark"] {
   //--global-bg-color: #{$grey-color-dark};
-  --global-bg-color: #131313;
+  --global-bg-color: #2b2b2b;
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
@@ -91,7 +91,7 @@ html[data-theme="dark"] {
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
 //  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-bg-color: rgba(0, 0, 0, 0.9);
+  --global-footer-bg-color: rgba(0, 0, 0, 0.7);
   --global-footer-text-color: rgba(255, 255, 255, 1.0);
   --global-footer-link-color: rgba(0, 0, 0, 1.0);
   --global-distill-app-color: #{$grey-color-light};
@@ -107,10 +107,10 @@ html[data-theme="dark"] {
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
 
-  --global-tip-block: #42b983;
+  --global-tip-block: #38b97f;
   --global-tip-block-bg: #0c6a3e;
-  --global-tip-block-text: #23a168;
-  --global-tip-block-title: #359469;
+  --global-tip-block-text: #89d2b1;
+  --global-tip-block-title: #2d9767;
   --global-warning-block: #e7c000;
   --global-warning-block-bg: #fff8d8;
   --global-warning-block-text: #6b5900;
