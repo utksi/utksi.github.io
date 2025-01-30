@@ -12,11 +12,11 @@ $orange-color: #f29105 !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00369f !default;
 //$bright-cyan-color: #00eeff !default;    // #00b8d4: Brighter cyan for dark mode (or try #00e5ff for even brighter)
-$bright-cyan-color: #18ffffe4 !default;  // Cyan A200 - Very bright
+// $bright-cyan-color: #18ffffe4 !default;  // Cyan A200 - Very bright
 // or
-//$bright-cyan-color: #40c4ff !default;  // Light Blue A200
+// $bright-cyan-color: #40c4ff !default;  // Light Blue A200
 // or
-//$bright-cyan-color: #00ffff !default;  // Pure cyan
+$bright-cyan-color: #02ffffd2 !default;  // Pure cyan
 // $bright-cyan-color: #00e5ff !default;    // #00b8d4: Brighter cyan for dark mode (or try #00e5ff for even brighter)
 $cyan-color: #2698ba !default;
 $light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
