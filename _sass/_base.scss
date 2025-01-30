@@ -841,7 +841,8 @@ footer.sticky-bottom {
           margin-bottom: 0.5rem;
 
           a {
-            color: white;
+            color: var(--global-badge-text-color, white);  // Falls back to white if variable not set
+            // color: white;
 
             &:hover {
               text-decoration: none;
