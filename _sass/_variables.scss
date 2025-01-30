@@ -16,10 +16,11 @@ $blue-color-dark: #00369f !default;
 // or
 // $bright-cyan-color: #40c4ff !default;  // Light Blue A200
 // or
-$bright-cyan-color: #30c4f0 !default;  // Pure cyan
+$bright-cyan-color: #27b1db !default;  // Pure cyan
 // $bright-cyan-color: #00e5ff !default;    // #00b8d4: Brighter cyan for dark mode (or try #00e5ff for even brighter)
 $cyan-color: #2698ba !default;
-$light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
+// $light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
+$light-cyan-color: color.adjust($cyan-color, $lightness: 10%);
 $green-color: #00ab37 !default;
 $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
