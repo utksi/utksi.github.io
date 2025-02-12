@@ -22,11 +22,14 @@ Hi! I work on **first-principles** simulations of functional materials.
 
 Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.se/en/employee/utksi60).
 
-### What I'm doing right now:
+<br>
+<br>
+
+#### What I'm doing right now:
 
 1. **Analysis of charge screening on carrier recombination**  
    - Not all of it can be put on GitHub (as always 🤫), but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
 
 2. **Exciton-phonon coupling via Yambo**  
-   - I will eventually upload some Yambo patches to GitHub—no links yet 😔.  
+   - I will eventually upload some Yambo patches to GitHub — no links yet 😔.  
    - On the technical side: temperature-dependent calculations are slowly coming into focus.
