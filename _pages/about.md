@@ -18,6 +18,15 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi! I'm Utkarsh. I work on first priniciples simulations of functional materials.
+Hi! I work on **first-principles** simulations of functional materials.
 
-Here's my [github](https://github.com/utksi) and [University page](https://liu.se/en/employee/utksi60).
+Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.se/en/employee/utksi60).
+
+### What I'm doing right now:
+
+1. **Analysis of charge screening on carrier recombination**  
+   - Not all of it can be put on GitHub (as always 🤫), but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
+
+2. **Exciton-phonon coupling via Yambo**  
+   - I will eventually upload some Yambo patches to GitHub—no links yet 😔.  
+   - On the technical side: temperature-dependent calculations are slowly coming into focus.
