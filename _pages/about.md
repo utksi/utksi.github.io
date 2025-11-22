@@ -6,7 +6,7 @@ subtitle: <a href='#'>Ph.D. Student, Linköping University</a>.
 
 profile:
   align: right
-  image: profile.png #me.svg #absorption.png
+  image: profile.jpg #me.svg #absorption.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>G406, Fysikhuset</p>
