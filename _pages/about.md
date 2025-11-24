@@ -25,11 +25,13 @@ Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.s
 <br>
 <br>
 
-#### What I'm doing right now:
+#### What I'm (or will soon be) doing right now:
+1. ** Advent of Code 2025**
+   - Now comfortable with Julia, and will put the knowledge to (fun) test(s).
 
-1. **Analysis: How charge screening affects carrier recombination**  
-   - Not all of it can be put on GitHub (as always 🤫), but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
+2. **Analysis: How charge screening affects carrier recombination**  
+   - Not all of it can be put on GitHub, but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
+   - A pre-print will be available soon.
 
-2. **Exciton-phonon coupling via Yambo**  
-   - I will eventually upload some Yambo patches to GitHub — no links yet 😔.  
-   - On the technical side: temperature-dependent calculations are slowly coming into focus.
+3. **Guided exploration of Excitonic Born-Oppenheimer Surface **  
+   - I will eventually upload some Yambo patches to GitHub — no links yet.
