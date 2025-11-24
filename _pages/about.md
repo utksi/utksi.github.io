@@ -26,8 +26,8 @@ Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.s
 <br>
 
 #### What I'm (or will soon be) doing right now:
-1. ** Advent of Code 2025**
-   - Now comfortable with Julia, and will put the knowledge to (fun) test(s).
+1. **Advent of Code 2025**
+   - I will use Julia all the way through this time around.
 
 2. **Analysis: How charge screening affects carrier recombination**  
    - Not all of it can be put on GitHub, but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
