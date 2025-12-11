@@ -26,13 +26,13 @@ Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.s
 <br>
 
 #### What I'm (or will soon be) doing right now:
-1. **Advent of Code 2025**
+1. **Analysis: How dynamic charge screening affects carrier recombination**
+   - A preprint is here: [arXiv](https://doi.org/10.48550/arXiv.2512.07581)
+   - Not all of it can be put on GitHub, but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
+
+2. **Advent of Code 2025**
    - I will use Julia all the way through this time around.
    - Starts [Dec. 1st](https://adventofcode.com/2025). Follow me [here](https://github.com/utksi/advent_of_code_2025)!
-
-2. **Analysis: How charge screening affects carrier recombination**  
-   - Not all of it can be put on GitHub, but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
-   - A pre-print will be available soon.
 
 3. **Guided exploration of Excitonic Born-Oppenheimer Surface**  
    - I will eventually upload some Yambo patches to GitHub — no links yet.
