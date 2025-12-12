@@ -30,7 +30,7 @@ Here's my [GitHub](https://github.com/utksi) and [University page](https://liu.s
    - A preprint is here: [arXiv](https://doi.org/10.48550/arXiv.2512.07581)
    - Not all of it can be put on GitHub, but I've started adding some tools here: [Kaya](https://github.com/utksi/kaya).
 
-2. **Advent of Code 2025**
+2. **[Finished] Advent of Code 2025**
    - I will use Julia all the way through this time around.
    - Starts [Dec. 1st](https://adventofcode.com/2025). Follow me [here](https://github.com/utksi/advent_of_code_2025)!
 
