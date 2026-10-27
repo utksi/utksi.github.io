@@ -1876,11 +1876,12 @@ the POTCAR (520 eV for N), the electronic convergence is tight, real-space proje
 structure in the POSCAR was relaxed with these settings.</p>
 <div class="admonition info">
 <p class="admonition-title">Convergence</p>
-<p>Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
-plane-wave cutoff, the k-point mesh, the smearing and the electronic convergence than total energies are. The settings here are chosen to show the workflow; they are not the
-result of a convergence study. Before using the constants in a publication, check that they change by
-less than the accuracy you need when the cutoff is raised and the k-point mesh refined, and relax the reference structure with the final
-settings.</p>
+<p>Elastic constants are obtained from derivatives of the stress with respect to the strain, which are estimated
+from stress differences of a few GPa. They are therefore much more sensitive to the plane-wave cutoff, the
+k-point mesh, the smearing and the electronic convergence than total energies are. The settings here are
+chosen to show the workflow; they are not the result of a convergence study. Before using the constants in a
+publication, check that they change by less than the accuracy you need when the cutoff is raised and the
+k-point mesh refined, and relax the reference structure with the final settings.</p>
 </div>
 <h2 id="2-look-at-the-strain-set">2. Look at the strain set<a class="headerlink" href="#2-look-at-the-strain-set" title="Permanent link">&para;</a></h2>
 <p><code>minelastic info</code> analyses the structure without writing anything:</p>
