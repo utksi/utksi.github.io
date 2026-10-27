@@ -1877,8 +1877,11 @@ largest <code>ENMAX</code> of the POTCAR, so that the Pulay stress changes littl
 electronic structure tightly (<code>EDIFF</code> of 1E-8). <code>minelastic generate vasp</code> reports the settings that the
 template does not meet (<a href="../../codes/vasp/#the-incar">VASP</a>). All strained cells use the k-point mesh of the
 template; a <code>KSPACING</code> in the INCAR is replaced by the explicit mesh of the reference cell.</p>
-<p>Never combine cells computed with different codes or settings. The constants are differences of stresses,
-and a systematic difference between two cells does not cancel.</p>
+<div class="admonition warning">
+<p class="admonition-title">One set of settings</p>
+<p>Never combine cells computed with different codes or settings. The constants are differences of
+stresses, and a systematic difference between two cells does not cancel.</p>
+</div>
 <h2 id="check-the-symmetry-before-running">Check the symmetry before running<a class="headerlink" href="#check-the-symmetry-before-running" title="Permanent link">&para;</a></h2>
 <p><code>minelastic info</code> prints the space group, the elastic type and the number of strain patterns, without writing
 anything:</p>

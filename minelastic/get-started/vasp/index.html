@@ -1871,11 +1871,17 @@ LREAL = .FALSE.
 LWAVE = .FALSE.
 LCHARG = .FALSE.
 </code></pre></div>
-<p>and the KPOINTS file asks for a Gamma-centred 8 x 8 x 5 mesh. The elastic constants are differences of
-stresses of a few GPa, so the settings are tighter than for a total-energy calculation: a plane-wave cutoff
-of 1.3 times the largest ENMAX of the POTCAR (520 eV for N), a tight electronic convergence and no
-real-space projection. The structure in the POSCAR was relaxed with the same settings, so that its residual
-stress is small.</p>
+<p>and the KPOINTS file asks for a Gamma-centred 8 x 8 x 5 mesh. The cutoff is 1.3 times the largest ENMAX of
+the POTCAR (520 eV for N), the electronic convergence is tight, real-space projection is off, and the
+structure in the POSCAR was relaxed with these settings.</p>
+<div class="admonition info">
+<p class="admonition-title">Convergence</p>
+<p>Elastic constants are differences of stresses of a few GPa, so they are much more sensitive to the
+plane-wave cutoff, the k-point mesh, the smearing and the electronic convergence than total energies are. The settings here are chosen to show the workflow; they are not the
+result of a convergence study. Before using the constants in a publication, check that they change by
+less than the accuracy you need when the cutoff is raised and the k-point mesh refined, and relax the reference structure with the final
+settings.</p>
+</div>
 <h2 id="2-look-at-the-strain-set">2. Look at the strain set<a class="headerlink" href="#2-look-at-the-strain-set" title="Permanent link">&para;</a></h2>
 <p><code>minelastic info</code> analyses the structure without writing anything:</p>
 <!-- shell -->
@@ -1899,9 +1905,12 @@ them. Pattern 1 stretches the cell along x and shears it in the yz plane at the 
 stretches it along z. The entry <code>s1 = 1 c11</code> means that the first stress component of pattern 1,
 <span class="arithmatex">\(\sigma_{xx}\)</span>, equals <span class="arithmatex">\(c_{11}\)</span> times the strain. Every constant appears alone in at least one stress
 component, so each is read off directly.</p>
-<p>Each pattern is applied at the strains <span class="arithmatex">\(-0.01\)</span> and <span class="arithmatex">\(+0.01\)</span> (multipliers -1 and 1 of the step). By default
-minelastic also uses <span class="arithmatex">\(\pm 0.02\)</span>, which makes the numerical derivative more accurate but doubles the number of
-calculations. <code>--stencil central</code> keeps the cheaper two-point derivative for this first run.</p>
+<div class="admonition note">
+<p class="admonition-title">Two points per strain</p>
+<p>By default minelastic applies each pattern at <span class="arithmatex">\(\pm 0.01\)</span> and <span class="arithmatex">\(\pm 0.02\)</span>, which makes the numerical
+derivative more accurate but doubles the number of calculations. For this first run, <code>--stencil central</code>
+keeps only <span class="arithmatex">\(\pm 0.01\)</span> (the multipliers -1 and 1 in the output above).</p>
+</div>
 <h2 id="3-write-the-inputs">3. Write the inputs<a class="headerlink" href="#3-write-the-inputs" title="Permanent link">&para;</a></h2>
 <!-- shell -->
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>minelastic<span class="w"> </span>generate<span class="w"> </span>vasp<span class="w"> </span>vasp_aln<span class="w"> </span>-o<span class="w"> </span>el<span class="w"> </span>--stencil<span class="w"> </span>central

@@ -2105,9 +2105,12 @@ the strained cells and once from the stresses of the displaced atoms.</p>
 the whole tensor by symmetry. For this AlN example, e33 = -0.428 C/m<span class="arithmatex">\(^2\)</span>, against -0.424 C/m<span class="arithmatex">\(^2\)</span> from
 DFPT; <a href="../own-workflow/#bring-your-own-stresses"><code>examples/replay_vasp_aln.py</code></a> reproduces it from the stored
 stresses and dipoles.</p>
-<p>VASP evaluates the Berry phase only for the first ionic step. In a relaxation the dipole would belong to the
-unrelaxed structure, so minelastic refuses dipoles from relaxed-ion cells; the total tensor comes from
+<div class="admonition note">
+<p class="admonition-title">Berry phase and relaxations</p>
+<p>VASP evaluates the Berry phase only for the first ionic step. In a relaxation the dipole would belong to
+the unrelaxed structure, so minelastic refuses dipoles from relaxed-ion cells; the total tensor comes from
 <code>--ionic</code>, which needs single points only.</p>
+</div>
 <h2 id="with-other-codes">With other codes<a class="headerlink" href="#with-other-codes" title="Permanent link">&para;</a></h2>
 <p>The elastic part of <code>--ionic</code> (force constants, internal strain, relaxed-ion constants) works with every
 interface. minelastic reads Berry-phase dipoles from VASP output only. With other codes, pass the dipoles

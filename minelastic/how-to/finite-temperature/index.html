@@ -1772,8 +1772,11 @@ of 12.</p>
 <p>The stress fluctuations scale as <span class="arithmatex">\(1/\sqrt{N}\)</span> with the number of atoms. A larger supercell, a longer run or
 a larger strain step (within the linear regime) reduce the error. MD inputs use two points per pattern,
 <span class="arithmatex">\(\pm\delta\)</span>, because the four-point formula amplifies the noise of the averages: at equal total MD time its
-result is about twice as noisy. For metals, use an electronic smearing that matches the temperature (VASP
-<code>ISMEAR = -1</code> with <code>SIGMA</code> = <span class="arithmatex">\(k_B T\)</span>).</p>
+result is about twice as noisy.</p>
+<div class="admonition tip">
+<p class="admonition-title">Metals</p>
+<p>Use an electronic smearing that matches the temperature, in VASP <code>ISMEAR = -1</code> with <code>SIGMA</code> = <span class="arithmatex">\(k_B T\)</span>.</p>
+</div>
 <h2 id="with-an-ase-calculator">With an ASE calculator<a class="headerlink" href="#with-an-ase-calculator" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/utksi/minelastic/tree/main/examples/emt_finite_temperature.py"><code>examples/emt_finite_temperature.py</code></a>
 follows the three steps for fcc Al with ASE's EMT potential in a 108-atom supercell. Berendsen NPT gives
@@ -1799,8 +1802,11 @@ c11        53.3     46.7 +- 0.4  GPa
 c12        32.9     31.5 +- 0.5  GPa
 c44        36.2     30.3 +- 0.4  GPa
 </code></pre></div>
-<p>The run takes about 3 minutes on one core. EMT is a toy potential for Al, so only the workflow carries over,
-not the numbers.</p>
+<p>The run takes a few minutes on one core.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>EMT is a toy potential for Al: only the workflow carries over, not the numbers.</p>
+</div>
 <h2 id="with-vasp-or-quantum-espresso">With VASP or Quantum ESPRESSO<a class="headerlink" href="#with-vasp-or-quantum-espresso" title="Permanent link">&para;</a></h2>
 <p>The template is the NVT run of the thermally expanded supercell. <code>generate --md</code> keeps its MD settings and
 fixes the cell. For VASP, for example Langevin NVT at 600 K:</p>
@@ -1815,11 +1821,14 @@ ISMEAR = -1 ; SIGMA = 0.0517              # k_B T at 600 K (eV), for a metal
 minelastic<span class="w"> </span>collect<span class="w"> </span>el_600K<span class="w"> </span>--md<span class="w"> </span>--skip<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--kinetic-temperature<span class="w"> </span><span class="m">600</span>
 </code></pre></div>
 <p><code>--skip</code> discards the equilibration steps. VASP and pw.x print the stress without its kinetic part, and
-<code>--kinetic-temperature</code> adds it (<span class="arithmatex">\(n k_B T\)</span> in <span class="arithmatex">\(C_{11}\)</span>, <span class="arithmatex">\(C_{12}\)</span>, ..., about 0.25 GPa for Al at 300 K). The
-standard errors assume uncorrelated steps, so thin or block-average the trajectory if you need reliable
-error bars. For pw.x, the template has <code>calculation = 'md'</code> with a thermostat in <code>&amp;IONS</code> and a fixed cell,
+<code>--kinetic-temperature</code> adds it (<span class="arithmatex">\(n k_B T\)</span> in <span class="arithmatex">\(C_{11}\)</span>, <span class="arithmatex">\(C_{12}\)</span>, ..., about 0.25 GPa for Al at 300 K). For pw.x, the template has <code>calculation = 'md'</code> with a thermostat in <code>&amp;IONS</code> and a fixed cell,
 and the rest is the same. minelastic refuses to collect MD runs without <code>--md</code> (or <code>--samples</code>), so that
 the last step is never taken by mistake.</p>
+<div class="admonition note">
+<p class="admonition-title">Error bars</p>
+<p>The standard errors assume uncorrelated steps. Thin or block-average the trajectory if you need reliable
+error bars.</p>
+</div>
 <p>A cheaper route runs the MD with a machine-learned force field and computes accurate single points on
 selected snapshots, in sub-directories <code>conf-*</code> of each strain state. Collect them with</p>
 <!-- skip: needs the snapshot calculations -->
