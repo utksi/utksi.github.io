@@ -471,6 +471,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage-with-agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage with agentic workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-this-documentation-is-organized" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1003,6 +1014,34 @@
     
   
     Your own workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="how-to/agentic-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage with agentic workflows
   
 
     
@@ -1743,6 +1782,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#usage-with-agentic-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage with agentic workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-this-documentation-is-organized" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1868,6 +1918,16 @@ ABINIT, FHI-aims and every structure format that ASE can write (CASTEP, SIESTA, 
 such as EMT, MACE or CP2K, is used directly from Python. There are tutorials for
 <a href="get-started/vasp/">VASP</a>, <a href="get-started/qe/">Quantum ESPRESSO</a>, <a href="get-started/abinit/">ABINIT</a> and
 <a href="get-started/cp2k/">CP2K</a>, with the output of real calculations.</p>
+<h2 id="usage-with-agentic-workflows">Usage with agentic workflows<a class="headerlink" href="#usage-with-agentic-workflows" title="Permanent link">&para;</a></h2>
+<p>An AI coding agent such as Claude Code can run minelastic for you. The repository includes an agent skill,
+<a href="https://github.com/utksi/minelastic/tree/main/skills/minelastic"><code>skills/minelastic</code></a>, with the commands and
+the checks that a correct calculation needs. In Claude Code:</p>
+<!-- skip: Claude Code commands -->
+<div class="highlight"><pre><span></span><code>/plugin marketplace add utksi/minelastic
+/plugin install minelastic@minelastic
+</code></pre></div>
+<p>Then ask in plain words, for example "compute the relaxed-ion elastic constants of this POSCAR with MACE".
+Other agents and more examples: <a href="how-to/agentic-workflows/">Usage with agentic workflows</a>.</p>
 <h2 id="how-this-documentation-is-organized">How this documentation is organized<a class="headerlink" href="#how-this-documentation-is-organized" title="Permanent link">&para;</a></h2>
 <p>If you are new to minelastic, start with the <a href="get-started/installation/">installation</a> and
 <a href="get-started/first-tensor/">your first elastic tensor</a>, which needs no DFT code, and then the tutorial for
